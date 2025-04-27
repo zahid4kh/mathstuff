@@ -1,5 +1,6 @@
 package math
 
+import kotlin.math.PI
 import kotlin.math.pow
 import kotlin.math.sqrt
 
@@ -35,5 +36,9 @@ class Math {
 
     fun squarePerimeter(side: Float): Float{
         return side * 4
+    }
+
+    fun circleArea(radius: Float): Float{
+        return PI.toFloat() * (radius.pow(2))
     }
 }
