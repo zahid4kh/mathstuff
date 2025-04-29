@@ -5,7 +5,7 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
-  base: '/',
+  base: '/mathstuff/docs/',
   build: {
     outDir: 'dist',
     sourcemap: true
