@@ -77,4 +77,12 @@ class Math {
     fun circleLengthD(diameter: Float): Float{
         return PI.toFloat() * diameter
     }
+
+    fun Float.toDegrees(): Float {
+        return this * 180f / PI.toFloat()
+    }
+
+    fun Float.toRadians(): Float {
+        return this * PI.toFloat() / 180f
+    }
 }
