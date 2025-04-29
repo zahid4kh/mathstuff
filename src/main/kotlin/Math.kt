@@ -38,6 +38,22 @@ class Math {
         return side * 4
     }
 
+    fun triangleArea(height: Float, base: Float): Float{
+
+        val area = (0.5 * height * base).toFloat()
+
+        return area
+    }
+
+    fun triangleArea(sideA: Float, sideB: Float, sideC: Float): Float{
+        val perimeter = sideA + sideB + sideC
+        val semiPerimeter = perimeter/2
+
+        val area = sqrt(semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC))
+
+        return area
+    }
+
     fun circleArea(radius: Float): Float{
         return PI.toFloat() * (radius.pow(2))
     }
