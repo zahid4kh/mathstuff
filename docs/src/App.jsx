@@ -96,13 +96,13 @@ function App() {
                   <h2 className="text-xl font-semibold mb-6">Getting Started</h2>
                   <p className="mb-4">Add the JitPack repository to your <code className="text-sm bg-muted px-2 py-0.5 rounded font-mono">settings.gradle.kts</code> file:</p>
                   <CodeBlock
-                    code='maven { url = uri("https://jitpack.io") }'
+                    code={`maven { url = uri("https://jitpack.io") }`}
                     language="kotlin"
                   />
 
                   <p className="mt-6 mb-4">Add the dependency:</p>
                   <CodeBlock
-                    code='implementation("com.github.zahid4kh:mathstuff:1.0.1")'
+                    code={`implementation("com.github.zahid4kh:mathstuff:1.0.1")`}
                     language="kotlin"
                   />
 

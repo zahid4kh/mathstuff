@@ -3,9 +3,14 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus, vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { Copy, Check } from 'lucide-react';
 
-export default function CodeBlock({ code, language = 'kotlin' }) {
+export default function CodeBlock({ code = '', language = 'kotlin' }) {
   const [copied, setCopied] = useState(false);
   const isDarkMode = document.documentElement.classList.contains('dark');
+
+  if (typeof code !== 'string') {
+    console.error('Invalid code prop:', code);
+    code = code?.toString() || '// Code unavailable';
+  }
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(code);
