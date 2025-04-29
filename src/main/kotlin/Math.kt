@@ -1,8 +1,6 @@
 package math
 
-import kotlin.math.PI
-import kotlin.math.pow
-import kotlin.math.sqrt
+import kotlin.math.*
 
 class Math {
 
@@ -64,6 +62,40 @@ class Math {
 
     fun trianglePerimeter(sideA: Float, sideB: Float, sideC: Float): Float{
         return sideA + sideB + sideC
+    }
+
+    fun triangleAngles(sideA: Float, sideB: Float, sideC: Float, showLogs: Boolean = true): Triple<Float, Float, Float>? {
+        if (sideA + sideB <= sideC || sideA + sideC <= sideB || sideB + sideC <= sideA) {
+            println("Error: The given side lengths do not form a valid triangle.")
+            return null
+        }
+
+        val cosAlpha = (sideB.pow(2) + sideC.pow(2) - sideA.pow(2)) / (2 * sideB * sideC)
+        val sinAlpha = sqrt(1 - cosAlpha.pow(2))
+        val alphaRad = atan2(sinAlpha, cosAlpha)
+
+        val cosBeta = (sideA.pow(2) + sideC.pow(2) - sideB.pow(2)) / (2 * sideA * sideC)
+        val sinBeta = sqrt(1 - cosBeta.pow(2))
+        val betaRad = atan2(sinBeta, cosBeta)
+
+        val cosTheta = (sideA.pow(2) + sideB.pow(2) - sideC.pow(2)) / (2 * sideA * sideB)
+        val sinTheta = sqrt(1 - cosTheta.pow(2))
+        val thetaRad = atan2(sinTheta, cosTheta)
+
+        val alphaDeg = alphaRad.toDegrees()
+        val betaDeg = betaRad.toDegrees()
+        val thetaDeg = thetaRad.toDegrees()
+
+        if (showLogs){
+            println("Angle opposite side a1: ${String.format("%.3f", alphaDeg)} degrees")
+            println("Angle opposite side a2: ${String.format("%.3f", betaDeg)} degrees")
+            println("Angle opposite side l: ${String.format("%.3f", thetaDeg)} degrees")
+
+            val angleSum = alphaDeg + betaDeg + thetaDeg
+            println("Sum of angles: ${String.format("%.3f", angleSum)} degrees")
+        }
+
+        return Triple(alphaDeg, betaDeg, thetaDeg)
     }
 
     fun circleArea(radius: Float): Float{
