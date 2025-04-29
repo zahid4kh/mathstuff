@@ -10,8 +10,8 @@ export const mathFunctions = {
         returnType: "Int",
         example: "val sum = math.addInt(5, 3) // Returns 8",
         code: `fun addInt(a: Int, b: Int): Int{
-      return a+b
-  }`
+                  return a+b
+              }`
       },
       {
         name: "addFloat",
