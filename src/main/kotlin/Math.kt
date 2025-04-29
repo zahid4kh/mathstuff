@@ -62,6 +62,10 @@ class Math {
         return area
     }
 
+    fun trianglePerimeter(sideA: Float, sideB: Float, sideC: Float): Float{
+        return sideA + sideB + sideC
+    }
+
     fun circleArea(radius: Float): Float{
         return PI.toFloat() * (radius.pow(2))
     }
