@@ -38,6 +38,14 @@ class Math {
         return side * 4
     }
 
+    fun rectArea(sideA: Float, sideB: Float): Float{
+        return sideA * sideB
+    }
+
+    fun rectPerimeter(sideA: Float, sideB: Float): Float{
+        return (sideA + sideB) * 2
+    }
+
     fun triangleArea(height: Float, base: Float): Float{
 
         val area = (0.5 * height * base).toFloat()

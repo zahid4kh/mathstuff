@@ -4,6 +4,7 @@ fun main(){
 
     val math = Math()
 
-    println(math.circleArea(1f))
+    println(math.rectPerimeter(2f, 4f))
+    println(math.rectArea(2f, 4f))
 
 }
