@@ -19,6 +19,7 @@ out/
 
 ### Kotlin ###
 .kotlin
+docs/node_modules
 
 ### Eclipse ###
 .apt_generated
