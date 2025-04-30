@@ -453,5 +453,100 @@ export const mathFunctions = {
     return ((1.0 / 3.0) * baseLength * baseWidth * height).toFloat()
 }`
       }
+    ],
+    "2D Shapes": [
+        {
+            name: "arcLength",
+            description: "Calculate the length of an arc given radius and angle in radians",
+            parameters: [
+                { name: "radius", type: "Float", description: "Radius of the circle" },
+                { name: "angleRadians", type: "Float", description: "Angle of the arc in radians" }
+            ],
+            returnType: "Float",
+            example: "val length = math.arcLength(5f, PI.toFloat()/2) // Returns 7.85f (quarter circle)",
+            code: `fun arcLength(radius: Float, angleRadians: Float): Float {
+    return radius * angleRadians
+}`
+        },
+        {
+            name: "sectorArea",
+            description: "Calculate the area of a sector given radius and angle in radians",
+            parameters: [
+                { name: "radius", type: "Float", description: "Radius of the circle" },
+                { name: "angleRadians", type: "Float", description: "Angle of the sector in radians" }
+            ],
+            returnType: "Float",
+            example: "val area = math.sectorArea(5f, PI.toFloat()/2) // Returns 19.63f (quarter circle)",
+            code: `fun sectorArea(radius: Float, angleRadians: Float): Float {
+    return (0.5 * radius.pow(2) * angleRadians).toFloat()
+}`
+        },
+        {
+            name: "trapezoidArea",
+            description: "Calculate the area of a trapezoid",
+            parameters: [
+                { name: "top", type: "Float", description: "Length of the top parallel side" },
+                { name: "bottom", type: "Float", description: "Length of the bottom parallel side" },
+                { name: "height", type: "Float", description: "Height between the parallel sides" }
+            ],
+            returnType: "Float",
+            example: "val area = math.trapezoidArea(3f, 5f, 4f) // Returns 16f",
+            code: `fun trapezoidArea(top: Float, bottom: Float, height: Float): Float {
+    return (0.5 * (top + bottom) * height).toFloat()
+}`
+        },
+        {
+            name: "regularPolygonArea",
+            description: "Calculate the area of a regular polygon given number of sides and side length",
+            parameters: [
+                { name: "numberOfSides", type: "Int", description: "Number of sides of the polygon" },
+                { name: "sideLength", type: "Float", description: "Length of each side" }
+            ],
+            returnType: "Float",
+            example: "val area = math.regularPolygonArea(6, 4f) // Returns 41.57f (regular hexagon)",
+            code: `fun regularPolygonArea(numberOfSides: Int, sideLength: Float): Float {
+        val apothem = sideLength / (2 * tan(PI / numberOfSides))
+    return ((numberOfSides * sideLength * apothem) / 2).toFloat()
+}`
+        },
+        {
+            name: "parallelogramArea",
+            description: "Calculate the area of a parallelogram",
+            parameters: [
+                { name: "base", type: "Float", description: "Length of the base" },
+                { name: "height", type: "Float", description: "Height perpendicular to the base" }
+            ],
+            returnType: "Float",
+            example: "val area = math.parallelogramArea(5f, 3f) // Returns 15f",
+            code: `fun parallelogramArea(base: Float, height: Float): Float {
+    return base * height
+}`
+        },
+        {
+            name: "rhombusArea",
+            description: "Calculate the area of a rhombus using its diagonals",
+            parameters: [
+                { name: "diagonal1", type: "Float", description: "Length of first diagonal" },
+                { name: "diagonal2", type: "Float", description: "Length of second diagonal" }
+            ],
+            returnType: "Float",
+            example: "val area = math.rhombusArea(6f, 8f) // Returns 24f",
+            code: `fun rhombusArea(diagonal1: Float, diagonal2: Float): Float {
+    return (diagonal1 * diagonal2) / 2
+}`
+        },
+        {
+            name: "ellipsArea",
+            description: "Calculate the area of an ellipse",
+            parameters: [
+                { name: "semiMajorAxis", type: "Float", description: "Length of the semi-major axis" },
+                { name: "semiMinorAxis", type: "Float", description: "Length of the semi-minor axis" }
+            ],
+            returnType: "Float",
+            example: "val area = math.ellipsArea(5f, 3f) // Returns 47.12f",
+            code: `fun ellipsArea(semiMajorAxis: Float, semiMinorAxis: Float): Float {
+    return (PI * semiMajorAxis * semiMinorAxis).toFloat()
+}`
+        }
     ]
   };
