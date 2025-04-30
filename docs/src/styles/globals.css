@@ -117,9 +117,42 @@
   .code-block {
     @apply rounded-md border border-border bg-secondary/50 font-mono text-sm;
   }
+
+  .sidebar-toggle-button {
+    @apply fixed md:hidden bottom-4 right-4 z-30 rounded-full shadow-lg;
+  }
+  
+  .sidebar-slide-in {
+    @apply animate-[slideInLeft_300ms_ease-in-out_forwards];
+  }
+  
+  .sidebar-slide-out {
+    @apply animate-[slideOutLeft_300ms_ease-in-out_forwards];
+  }
 }
 
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(-100%); opacity: 0; }
+}
+
+@media (max-width: 768px) {
+  .code-block {
+    @apply text-xs;
+  }
+  
+  pre {
+    max-width: 100%;
+    overflow-x: auto;
+  }
 }
