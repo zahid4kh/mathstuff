@@ -9,5 +9,5 @@ maven { url = uri("https://jitpack.io") }
 2. Add the dependency
 
 ```kotlin
-implementation("com.github.zahid4kh:mathstuff:1.0.4")
+implementation("com.github.zahid4kh:mathstuff:1.0.5")
 ```
