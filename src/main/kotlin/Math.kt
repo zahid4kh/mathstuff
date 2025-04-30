@@ -98,6 +98,13 @@ class Math {
         return Triple(alphaDeg, betaDeg, thetaDeg)
     }
 
+    fun triangleSide(sideA: Float, sideB: Float, angleBetween: Float): Float{
+        // angleBetween must be given in degrees
+        val sideC = sqrt(sideB.pow(2) + sideA.pow(2) - 2 * sideA * sideB * cos(angleBetween.toRadians()))
+
+        return sideC
+    }
+
     fun circleArea(radius: Float): Float{
         return PI.toFloat() * (radius.pow(2))
     }
