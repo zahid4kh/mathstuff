@@ -685,5 +685,139 @@ export const mathFunctions = {
     return (PI * semiMajorAxis * semiMinorAxis).toFloat()
 }`
         }
+    ],
+    "Vectors": [
+        {
+            name: "vectorAdd",
+            description: "Add two vectors of the same dimension",
+            parameters: [
+                { name: "vec1", type: "FloatArray", description: "First vector" },
+                { name: "vec2", type: "FloatArray", description: "Second vector" }
+            ],
+            returnType: "FloatArray",
+            example: "val result = math.vectorAdd(floatArrayOf(1f, 2f, 3f), floatArrayOf(4f, 5f, 6f)) // Returns [5f, 7f, 9f]",
+            code: `fun vectorAdd(vec1: FloatArray, vec2: FloatArray): FloatArray {
+    if (vec1.size != vec2.size) throw IllegalArgumentException("Vectors must have the same dimension")
+
+    val result = FloatArray(vec1.size)
+    for (i in vec1.indices) {
+        result[i] = vec1[i] + vec2[i]
+    }
+    return result
+}`
+        },
+        {
+            name: "vectorSubtract",
+            description: "Subtract one vector from another (both must have the same dimension)",
+            parameters: [
+                { name: "vec1", type: "FloatArray", description: "Vector to subtract from" },
+                { name: "vec2", type: "FloatArray", description: "Vector to subtract" }
+            ],
+            returnType: "FloatArray",
+            example: "val result = math.vectorSubtract(floatArrayOf(5f, 7f, 9f), floatArrayOf(1f, 2f, 3f)) // Returns [4f, 5f, 6f]",
+            code: `fun vectorSubtract(vec1: FloatArray, vec2: FloatArray): FloatArray {
+    if (vec1.size != vec2.size) throw IllegalArgumentException("Vectors must have the same dimension")
+
+    val result = FloatArray(vec1.size)
+    for (i in vec1.indices) {
+        result[i] = vec1[i] - vec2[i]
+    }
+    return result
+}`
+        },
+        {
+            name: "dotProduct",
+            description: "Calculate the dot product of two vectors",
+            parameters: [
+                { name: "vec1", type: "FloatArray", description: "First vector" },
+                { name: "vec2", type: "FloatArray", description: "Second vector" }
+            ],
+            returnType: "Float",
+            example: "val result = math.dotProduct(floatArrayOf(1f, 2f, 3f), floatArrayOf(4f, 5f, 6f)) // Returns 32f",
+            code: `fun dotProduct(vec1: FloatArray, vec2: FloatArray): Float {
+    if (vec1.size != vec2.size) throw IllegalArgumentException("Vectors must have the same dimension")
+
+    var result = 0f
+    for (i in vec1.indices) {
+        result += vec1[i] * vec2[i]
+    }
+    return result
+}`
+        },
+        {
+            name: "crossProduct",
+            description: "Calculate the cross product of two 3D vectors",
+            parameters: [
+                { name: "vec1", type: "FloatArray", description: "First 3D vector" },
+                { name: "vec2", type: "FloatArray", description: "Second 3D vector" }
+            ],
+            returnType: "FloatArray",
+            example: "val result = math.crossProduct(floatArrayOf(1f, 0f, 0f), floatArrayOf(0f, 1f, 0f)) // Returns [0f, 0f, 1f]",
+            code: `fun crossProduct(vec1: FloatArray, vec2: FloatArray): FloatArray {
+    if (vec1.size != 3 || vec2.size != 3) throw IllegalArgumentException("Cross product requires 3D vectors")
+
+    return floatArrayOf(
+        vec1[1] * vec2[2] - vec1[2] * vec2[1],
+        vec1[2] * vec2[0] - vec1[0] * vec2[2],
+        vec1[0] * vec2[1] - vec1[1] * vec2[0]
+    )
+}`
+        },
+        {
+            name: "vectorMagnitude",
+            description: "Calculate the magnitude (length) of a vector",
+            parameters: [
+                { name: "vec", type: "FloatArray", description: "Input vector" }
+            ],
+            returnType: "Float",
+            example: "val magnitude = math.vectorMagnitude(floatArrayOf(3f, 4f)) // Returns 5f",
+            code: `fun vectorMagnitude(vec: FloatArray): Float {
+    var sumOfSquares = 0f
+    for (component in vec) {
+        sumOfSquares += component * component
+    }
+    return sqrt(sumOfSquares)
+}`
+        },
+        {
+            name: "unitVector",
+            description: "Calculate the unit vector (vector with magnitude 1) in the same direction as the input vector",
+            parameters: [
+                { name: "vec", type: "FloatArray", description: "Input vector" }
+            ],
+            returnType: "FloatArray",
+            example: "val unit = math.unitVector(floatArrayOf(3f, 0f, 0f)) // Returns [1f, 0f, 0f]",
+            code: `fun unitVector(vec: FloatArray): FloatArray {
+    val magnitude = vectorMagnitude(vec)
+    if (magnitude == 0f) throw IllegalArgumentException("Cannot normalize a zero vector")
+
+    val result = FloatArray(vec.size)
+    for (i in vec.indices) {
+        result[i] = vec[i] / magnitude
+    }
+    return result
+}`
+        },
+        {
+            name: "angleBetweenVectors",
+            description: "Calculate the angle (in radians) between two vectors",
+            parameters: [
+                { name: "vec1", type: "FloatArray", description: "First vector" },
+                { name: "vec2", type: "FloatArray", description: "Second vector" }
+            ],
+            returnType: "Float",
+            example: "val angle = math.angleBetweenVectors(floatArrayOf(1f, 0f), floatArrayOf(0f, 1f)) // Returns PI/2 (90 degrees)",
+            code: `fun angleBetweenVectors(vec1: FloatArray, vec2: FloatArray): Float {
+    if (vec1.size != vec2.size) throw IllegalArgumentException("Vectors must have the same dimension")
+
+    val dotProd = dotProduct(vec1, vec2)
+    val mag1 = vectorMagnitude(vec1)
+    val mag2 = vectorMagnitude(vec2)
+
+    // for acos (-1 to 1)
+    val cosTheta = (dotProd / (mag1 * mag2)).coerceIn(-1f, 1f)
+    return acos(cosTheta)
+}`
+        }
     ]
   };
