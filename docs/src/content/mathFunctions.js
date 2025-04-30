@@ -819,5 +819,142 @@ export const mathFunctions = {
     return acos(cosTheta)
 }`
         }
+    ],
+    "Coordinate Geometry": [
+        {
+            name: "distance2D",
+            description: "Calculate the distance between two points in 2D space",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" }
+            ],
+            returnType: "Float",
+            example: "val dist = math.distance2D(1f, 2f, 4f, 6f) // Returns 5f",
+            code: `fun distance2D(x1: Float, y1: Float, x2: Float, y2: Float): Float {
+    return sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2))
+}`
+        },
+        {
+            name: "distance3D",
+            description: "Calculate the distance between two points in 3D space",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "z1", type: "Float", description: "z-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" },
+                { name: "z2", type: "Float", description: "z-coordinate of second point" }
+            ],
+            returnType: "Float",
+            example: "val dist = math.distance3D(1f, 2f, 3f, 4f, 5f, 6f) // Returns 5.196f",
+            code: `fun distance3D(x1: Float, y1: Float, z1: Float, x2: Float, y2: Float, z2: Float): Float {
+    return sqrt((x2 - x1).pow(2) + (y2 - y1).pow(2) + (z2 - z1).pow(2))
+}`
+        },
+        {
+            name: "midpoint2D",
+            description: "Calculate the midpoint between two points in 2D space",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" }
+            ],
+            returnType: "Pair<Float, Float>",
+            example: "val mid = math.midpoint2D(1f, 2f, 5f, 8f) // Returns Pair(3f, 5f)",
+            code: `fun midpoint2D(x1: Float, y1: Float, x2: Float, y2: Float): Pair<Float, Float> {
+    return Pair((x1 + x2) / 2, (y1 + y2) / 2)
+}`
+        },
+        {
+            name: "midpoint3D",
+            description: "Calculate the midpoint between two points in 3D space",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "z1", type: "Float", description: "z-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" },
+                { name: "z2", type: "Float", description: "z-coordinate of second point" }
+            ],
+            returnType: "Triple<Float, Float, Float>",
+            example: "val mid = math.midpoint3D(2f, 4f, 6f, 4f, 8f, 10f) // Returns Triple(3f, 6f, 8f)",
+            code: `fun midpoint3D(x1: Float, y1: Float, z1: Float, x2: Float, y2: Float, z2: Float): Triple<Float, Float, Float> {
+    return Triple((x1 + x2) / 2, (y1 + y2) / 2, (z1 + z2) / 2)
+}`
+        },
+        {
+            name: "slope",
+            description: "Calculate the slope of a line between two points",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" }
+            ],
+            returnType: "Float",
+            example: "val m = math.slope(1f, 2f, 4f, 8f) // Returns 2f",
+            code: `fun slope(x1: Float, y1: Float, x2: Float, y2: Float): Float {
+    if (x1 == x2) {
+        throw IllegalArgumentException("Vertical line has undefined slope (infinity)")
+    }
+    return (y2 - y1) / (x2 - x1)
+}`
+        },
+        {
+            name: "lineEquation",
+            description: "Calculate the coefficients of a line equation (ax + by + c = 0) passing through two points",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" }
+            ],
+            returnType: "Triple<Float, Float, Float>",
+            example: "val coeffs = math.lineEquation(1f, 1f, 2f, 2f) // Returns Triple(1f, -1f, 0f) for the equation x - y = 0",
+            code: `fun lineEquation(x1: Float, y1: Float, x2: Float, y2: Float): Triple<Float, Float, Float> {
+    val a = y2 - y1
+    val b = x1 - x2
+    val c = x2 * y1 - x1 * y2
+    return Triple(a, b, c)
+}`
+        },
+        {
+            name: "distancePointToLine",
+            description: "Calculate the distance from a point to a line defined by the equation ax + by + c = 0",
+            parameters: [
+                { name: "x", type: "Float", description: "x-coordinate of the point" },
+                { name: "y", type: "Float", description: "y-coordinate of the point" },
+                { name: "a", type: "Float", description: "a coefficient in the line equation ax + by + c = 0" },
+                { name: "b", type: "Float", description: "b coefficient in the line equation ax + by + c = 0" },
+                { name: "c", type: "Float", description: "c coefficient in the line equation ax + by + c = 0" }
+            ],
+            returnType: "Float",
+            example: "val dist = math.distancePointToLine(2f, 3f, 1f, -1f, 0f) // Distance from point (2,3) to line x - y = 0",
+            code: `fun distancePointToLine(x: Float, y: Float, a: Float, b: Float, c: Float): Float {
+    return abs(a * x + b * y + c) / sqrt(a.pow(2) + b.pow(2))
+}`
+        },
+        {
+            name: "areCollinear",
+            description: "Check if three points are collinear (lie on the same straight line)",
+            parameters: [
+                { name: "x1", type: "Float", description: "x-coordinate of first point" },
+                { name: "y1", type: "Float", description: "y-coordinate of first point" },
+                { name: "x2", type: "Float", description: "x-coordinate of second point" },
+                { name: "y2", type: "Float", description: "y-coordinate of second point" },
+                { name: "x3", type: "Float", description: "x-coordinate of third point" },
+                { name: "y3", type: "Float", description: "y-coordinate of third point" }
+            ],
+            returnType: "Boolean",
+            example: "val collinear = math.areCollinear(1f, 1f, 2f, 2f, 3f, 3f) // Returns true as points lie on the same line",
+            code: `fun areCollinear(x1: Float, y1: Float, x2: Float, y2: Float, x3: Float, y3: Float): Boolean {
+    // If area is zero, points are collinear
+    val area = abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2)) / 2
+    return area < 0.0001f
+}`
+        }
     ]
   };
