@@ -110,6 +110,14 @@ class Math {
         return PI.toFloat() * diameter
     }
 
+    fun cubeVolume(side: Float): Float{
+        return side.pow(3)
+    }
+
+    fun cuboidVolume(length: Float, width: Float, height: Float): Float{
+        return length * width * height
+    }
+
     fun Float.toDegrees(): Float {
         return this * 180f / PI.toFloat()
     }
