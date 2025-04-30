@@ -4,18 +4,19 @@ import { Github } from 'lucide-react';
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-10 border-b border-border bg-background/80 backdrop-blur-md transition-all duration-200">
+    <header className="sticky top-0 z-20 border-b border-border bg-background/80 backdrop-blur-md transition-all duration-200">
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary">
-            <span className="text-lg font-bold text-primary-foreground">M</span>
+        <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex h-7 w-7 md:h-8 md:w-8 items-center justify-center rounded-md bg-primary">
+            <span className="text-base md:text-lg font-bold text-primary-foreground">M</span>
           </div>
           <div className="flex flex-col">
-            <span className="text-lg font-bold tracking-tight">MathStuff</span>
-            <span className="text-xs text-muted-foreground">v1.0.1</span>
+            <span className="text-base md:text-lg font-bold tracking-tight">MathStuff</span>
+            <span className="text-[10px] md:text-xs text-muted-foreground">1.0.2</span>
           </div>
         </div>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 md:gap-4">
+          
           <a
             href="https://github.com/zahid4kh/mathstuff"
             target="_blank"
