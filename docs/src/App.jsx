@@ -74,7 +74,7 @@ function App() {
           setIsMobileOpen={setIsMobileOpen}
         />
         
-        <main className="flex-1 p-4 md:p-6 overflow-y-auto">
+        <main className="flex-1 p-4 md:p-6 overflow-y-auto h-[calc(100vh-64px)]">
           <div className={`transition-all duration-300 ${fadeIn ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
             {selectedFunction ? (
               <div className="max-w-3xl mx-auto">
