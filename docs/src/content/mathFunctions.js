@@ -133,6 +133,23 @@ export const mathFunctions = {
   
     return Triple(alphaDeg, betaDeg, thetaDeg)
 }`
+      },
+      {
+        name: "triangleSide",
+        description: "Calculate the length of a side of a triangle knowing the lengths of the other two sides and the angle between them",
+        parameters: [
+          { name: "sideA", type: "Float", description: "Length of first side" },
+          { name: "sideB", type: "Float", description: "Length of second side" },
+          { name: "angleBetween", type: "Float", description: "Angle between sideA and sideB in degrees" }
+        ],
+        returnType: "Float",
+        example: "val sideC = math.triangleSide(4f, 7f, 110f) // Returns 9.1735",
+        code:`fun triangleSide(sideA: Float, sideB: Float, angleBetween: Float): Float{
+    // angleBetween must be given in degrees
+    val sideC = sqrt(sideB.pow(2) + sideA.pow(2) - 2 * sideA * sideB * cos(angleBetween.toRadians()))
+
+    return sideC
+}`
       }
     ],
     "Pythagorean Theorem": [
