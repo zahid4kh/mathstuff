@@ -302,9 +302,9 @@ export const mathFunctions = {
             ],
             returnType: "Float",
             example: "val volume = math.cubeVolume(2f, 2f, 2f) // Returns 8f",
-            code: `fun cubeVolume(side: Float): Float{
-                return side.pow(3)
-            `}
-        }
-    ]
+              code: `fun cubeVolume(side: Float): Float{
+                  return side.pow(3)
+              }`
+          }
+      ]
   };
