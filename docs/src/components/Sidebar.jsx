@@ -30,7 +30,7 @@ export default function Sidebar({ categories, onSelectFunction, isMobileOpen, se
   return (
     <div className={`
       fixed md:static top-16 bottom-0 left-0 z-20
-      w-64 md:w-64 border-r border-border bg-background/95 backdrop-blur-sm
+      w-80 md:w-80 border-r border-border bg-background/95 backdrop-blur-sm
       h-[calc(100vh-64px)] overflow-y-auto
       transition-all duration-300 ease-in-out
       ${isMobileOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}
