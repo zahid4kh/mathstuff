@@ -194,6 +194,61 @@ class Math {
         return (PI * semiMajorAxis * semiMinorAxis).toFloat()
     }
 
+    fun equilateralTriangleArea(side: Float): Float {
+        return (sqrt(3f) / 4f) * side.pow(2)
+    }
+
+    fun equilateralTrianglePerimeter(side: Float): Float {
+        return 3 * side
+    }
+
+    fun isoscelesTriangleHeight(equalSide: Float, base: Float): Float {
+        return sqrt(equalSide.pow(2) - (base.pow(2) / 4f))
+    }
+
+    fun isoscelesTriangleArea(equalSide: Float, base: Float): Float {
+        val height = isoscelesTriangleHeight(equalSide, base)
+        return (base * height) / 2f
+    }
+
+    fun isoscelesTrianglePerimeter(equalSide: Float, base: Float): Float {
+        return 2 * equalSide + base
+    }
+
+    fun triangleHeight(sideA: Float, sideB: Float, sideC: Float, respectToSide: Float): Float {
+        val s = (sideA + sideB + sideC) / 2f
+        val area = sqrt(s * (s - sideA) * (s - sideB) * (s - sideC))
+
+        // h = 2 * area / base
+        // respectToSide - is the side to which the line is extended to
+        return 2f * area / respectToSide
+    }
+
+    // a/sin(A) = b/sin(B) = c/sin(C)
+    fun lawOfSines(sideA: Float, sideB: Float, angleA: Float): Float {
+        // angleA must be in radians
+        val sinAngleB = (sideB * sin(angleA)) / sideA
+
+        if (sinAngleB > 1 || sinAngleB < -1) {
+            throw IllegalArgumentException("No valid angle exists for the given inputs.")
+        }
+        return asin(sinAngleB)
+    }
+
+    // c² = a² + b² - 2ab*cos(C)
+    fun lawOfCosines(sideA: Float, sideB: Float, sideC: Float): Float {
+        val cosC = (sideA.pow(2) + sideB.pow(2) - sideC.pow(2)) / (2f * sideA * sideB)
+
+        if (cosC > 1 || cosC < -1) {
+            throw IllegalArgumentException("No valid angle exists for the given sides. They may not form a triangle.")
+        }
+        return acos(cosC)
+    }
+
+    fun triangleSemiPerimeter(sideA: Float, sideB: Float, sideC: Float): Float {
+        return (sideA + sideB + sideC) / 2f
+    }
+
     fun Float.toDegrees(): Float {
         return this * 180f / PI.toFloat()
     }

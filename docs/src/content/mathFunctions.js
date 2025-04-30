@@ -150,6 +150,143 @@ export const mathFunctions = {
 
     return sideC
 }`
+      },
+      {
+          name: "equilateralTriangleArea",
+          description: "Calculate the area of an equilateral triangle",
+          parameters: [
+              { name: "side", type: "Float", description: "Length of each side of the equilateral triangle" }
+          ],
+          returnType: "Float",
+          example: "val area = math.equilateralTriangleArea(5f) // Returns 10.83f",
+          code: `fun equilateralTriangleArea(side: Float): Float {
+    return (sqrt(3f) / 4f) * side.pow(2)
+}`
+      },
+      {
+          name: "equilateralTrianglePerimeter",
+          description: "Calculate the perimeter of an equilateral triangle",
+          parameters: [
+              { name: "side", type: "Float", description: "Length of each side of the equilateral triangle" }
+          ],
+          returnType: "Float",
+          example: "val perimeter = math.equilateralTrianglePerimeter(5f) // Returns 15f",
+          code: `fun equilateralTrianglePerimeter(side: Float): Float {
+    return 3 * side
+}`
+      },
+      {
+          name: "isoscelesTriangleHeight",
+          description: "Calculate the height of an isosceles triangle",
+          parameters: [
+              { name: "equalSide", type: "Float", description: "Length of the two equal sides" },
+              { name: "base", type: "Float", description: "Length of the base" }
+          ],
+          returnType: "Float",
+          example: "val height = math.isoscelesTriangleHeight(5f, 6f) // Returns 4.0f",
+          code: `fun isoscelesTriangleHeight(equalSide: Float, base: Float): Float {
+    return sqrt(equalSide.pow(2) - (base.pow(2) / 4f))
+}`
+      },
+      {
+          name: "isoscelesTriangleArea",
+          description: "Calculate the area of an isosceles triangle",
+          parameters: [
+              { name: "equalSide", type: "Float", description: "Length of the two equal sides" },
+              { name: "base", type: "Float", description: "Length of the base" }
+          ],
+          returnType: "Float",
+          example: "val area = math.isoscelesTriangleArea(5f, 6f) // Returns 12.0f",
+          code: `fun isoscelesTriangleArea(equalSide: Float, base: Float): Float {
+    val height = isoscelesTriangleHeight(equalSide, base)
+    return (base * height) / 2f
+}`
+      },
+      {
+          name: "isoscelesTrianglePerimeter",
+          description: "Calculate the perimeter of an isosceles triangle",
+          parameters: [
+              { name: "equalSide", type: "Float", description: "Length of the two equal sides" },
+              { name: "base", type: "Float", description: "Length of the base" }
+          ],
+          returnType: "Float",
+          example: "val perimeter = math.isoscelesTrianglePerimeter(5f, 6f) // Returns 16f",
+          code: `fun isoscelesTrianglePerimeter(equalSide: Float, base: Float): Float {
+    return 2 * equalSide + base
+}`
+      },
+      {
+          name: "triangleHeight",
+          description: "Calculate the height of a triangle given all three sides",
+          parameters: [
+              { name: "sideA", type: "Float", description: "Length of the first side" },
+              { name: "sideB", type: "Float", description: "Length of the second side" },
+              { name: "sideC", type: "Float", description: "Length of the third side" },
+              { name: "respectToSide", type: "Float", description: "Which side to use as the base" }
+          ],
+          returnType: "Float",
+          example: "val height = math.triangleHeight(3f, 4f, 5f, 3f) // Returns 4.0f (height with respect to side of length 3)",
+          code: `fun triangleHeight(sideA: Float, sideB: Float, sideC: Float, respectToSide: Float): Float {
+
+    val s = (sideA + sideB + sideC) / 2f
+    val area = sqrt(s * (s - sideA) * (s - sideB) * (s - sideC))
+
+    return 2f * area / respectToSide
+}`
+      },
+      {
+          name: "triangleSemiPerimeter",
+          description: "Calculate the semi-perimeter of a triangle",
+          parameters: [
+              { name: "sideA", type: "Float", description: "Length of the first side" },
+              { name: "sideB", type: "Float", description: "Length of the second side" },
+              { name: "sideC", type: "Float", description: "Length of the third side" }
+          ],
+          returnType: "Float",
+          example: "val semiPerimeter = math.triangleSemiPerimeter(3f, 4f, 5f) // Returns 6f",
+          code: `fun triangleSemiPerimeter(sideA: Float, sideB: Float, sideC: Float): Float {
+    return (sideA + sideB + sideC) / 2f
+}`
+      },
+      {
+          name: "lawOfSines",
+          description: "Apply the Law of Sines to find an unknown angle given two sides and an angle",
+          parameters: [
+              { name: "sideA", type: "Float", description: "Length of the first side" },
+              { name: "sideB", type: "Float", description: "Length of the second side" },
+              { name: "angleA", type: "Float", description: "Angle (in radians) opposite to sideA" }
+          ],
+          returnType: "Float",
+          example: "val angleB = math.lawOfSines(3f, 4f, PI/6f) // Returns the angle (in radians) opposite to sideB",
+          code: `fun lawOfSines(sideA: Float, sideB: Float, angleA: Float): Float {
+    // angleA must be in radians
+    val sinAngleB = (sideB * sin(angleA)) / sideA
+
+    if (sinAngleB > 1 || sinAngleB < -1) {
+        throw IllegalArgumentException("No valid angle exists for the given inputs.")
+    }
+    return asin(sinAngleB)
+}`
+      },
+      {
+          name: "lawOfCosines",
+          description: "Apply the Law of Cosines to find an unknown angle in a triangle given all three sides",
+          parameters: [
+              { name: "sideA", type: "Float", description: "Length of the first side" },
+              { name: "sideB", type: "Float", description: "Length of the second side" },
+              { name: "sideC", type: "Float", description: "Length of the third side" }
+          ],
+          returnType: "Float",
+          example: "val angleC = math.lawOfCosines(3f, 4f, 5f) // Returns the angle (in radians) opposite to sideC",
+          code: `fun lawOfCosines(sideA: Float, sideB: Float, sideC: Float): Float {
+
+    val cosC = (sideA.pow(2) + sideB.pow(2) - sideC.pow(2)) / (2f * sideA * sideB)
+
+    if (cosC > 1 || cosC < -1) {
+        throw IllegalArgumentException("No valid angle exists for the given sides. They may not form a triangle.")
+    }
+    return acos(cosC)
+}`
       }
     ],
     "Pythagorean Theorem": [
