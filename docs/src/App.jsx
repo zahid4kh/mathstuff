@@ -3,16 +3,34 @@ import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
 import CodeBlock from './components/CodeBlock';
 import { mathFunctions } from './content/mathFunctions';
-import { Calculator, BookOpen, Code2, ArrowRight, Menu, X } from 'lucide-react';
+import { Calculator, BookOpen, Code2, ArrowRight, Menu, X, Loader2 } from 'lucide-react';
 import { Button } from './components/ui/button';
 
 function App() {
   const [selectedFunction, setSelectedFunction] = useState(null);
   const [fadeIn, setFadeIn] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+  const [contentLoaded, setContentLoaded] = useState(false);
 
   useEffect(() => {
-    setFadeIn(true);
+    const loaderTimeout = setTimeout(() => {
+      const staticLoader = document.getElementById('initial-loader');
+      if (staticLoader) {
+        staticLoader.style.opacity = '0';
+        setTimeout(() => {
+          staticLoader.style.display = 'none';
+          document.body.style.overflow = '';
+        }, 300);
+      }
+      
+      setContentLoaded(true);
+      
+      setTimeout(() => {
+        setFadeIn(true);
+      }, 50);
+    }, 500);
+    
+    return () => clearTimeout(loaderTimeout);
   }, []);
 
   const handleSelectFunction = (func) => {
@@ -24,7 +42,7 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-background text-foreground">
+    <div className={`min-h-screen flex flex-col bg-background text-foreground transition-opacity duration-300 ease-in-out ${contentLoaded ? 'opacity-100' : 'opacity-0'}`}>
       <Navbar />
       
       <div className="md:hidden fixed bottom-4 right-4 z-30">
