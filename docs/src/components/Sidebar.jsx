@@ -58,9 +58,9 @@ export default function Sidebar({ categories, onSelectFunction, isMobileOpen, se
               </Button>
 
               <div
-                className={`ml-3 space-y-1 border-l border-border pl-3 overflow-hidden transition-all duration-300 ease-in-out ${
+                className={`ml-3 space-y-1 border-l border-border pl-3 overflow-y-auto transition-all duration-300 ease-in-out ${
                   expandedCategories[category]
-                    ? 'max-h-[500px] opacity-100'
+                    ? 'max-h-[80vh] opacity-100'
                     : 'max-h-0 opacity-0'
                 }`}
               >
