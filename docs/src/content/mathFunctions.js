@@ -23,8 +23,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val sum = math.addFloat(5.2f, 3.7f) // Returns 8.9f",
         code: `fun addFloat(a: Float, b: Float): Float{
-      return a + b
-  }`
+              return a + b
+          }`
       },
       {
         name: "addDouble",
@@ -278,5 +278,33 @@ export const mathFunctions = {
       return this * PI.toFloat() / 180f
   }`
       }
+    ],
+    "3D Shapes": [
+        {
+            name: "cuboidVolume",
+            description: "Calculate the volume of a cuboid (rectangular prism)",
+            parameters: [
+              { name: "length", type: "Float", description: "Length of the cuboid" },
+              { name: "width", type: "Float", description: "Width of the cuboid" },
+              { name: "height", type: "Float", description: "Height of the cuboid" }
+            ],
+            returnType: "Float",
+            example: "val volume = math.cuboidVolume(5f, 3f, 2f) // Returns 30f",
+            code: `fun cuboidVolume(length: Float, width: Float, height: Float): Float {
+                        return length * width * height
+                    }`
+        },
+        {
+            name: "cubeVolume",
+            description: "Calculate the volume of a cube",
+            parameters: [
+                {name: "side", type: "Float", description: "Length of the cube's side"}
+            ],
+            returnType: "Float",
+            example: "val volume = math.cubeVolume(2f, 2f, 2f) // Returns 8f",
+            code: `fun cubeVolume(side: Float): Float{
+                return side.pow(3)
+            `}
+        }
     ]
   };

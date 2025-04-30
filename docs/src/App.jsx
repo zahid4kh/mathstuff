@@ -102,7 +102,7 @@ function App() {
 
                   <p className="mt-6 mb-4">Add the dependency:</p>
                   <CodeBlock
-                    code={`implementation("com.github.zahid4kh:mathstuff:1.0.1")`}
+                    code={`implementation("com.github.zahid4kh:mathstuff:1.0.2")`}
                     language="kotlin"
                   />
 
