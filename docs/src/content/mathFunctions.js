@@ -52,8 +52,8 @@ export const mathFunctions = {
         example: "val area = math.triangleArea(10f, 5f) // Returns 25f",
         code: `fun triangleArea(height: Float, base: Float): Float{
       val area = (0.5 * height * base).toFloat()
-      return area
-  }`
+    return area
+}`
       },
       {
         name: "triangleArea (with 3 sides)",
@@ -72,8 +72,8 @@ export const mathFunctions = {
       val area = sqrt(semiPerimeter * (semiPerimeter - sideA) 
           * (semiPerimeter - sideB) * (semiPerimeter - sideC))
   
-      return area
-  }`
+    return area
+}`
       },
       {
         name: "trianglePerimeter",
@@ -86,8 +86,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val perimeter = math.trianglePerimeter(3f, 4f, 5f) // Returns 12f",
         code: `fun trianglePerimeter(sideA: Float, sideB: Float, sideC: Float): Float{
-      return sideA + sideB + sideC
-  }`
+    return sideA + sideB + sideC
+}`
       },
       {
         name: "triangleAngles",
@@ -131,8 +131,8 @@ export const mathFunctions = {
           println("Sum of angles: \${String.format("%.3f", angleSum)} degrees")
       }
   
-      return Triple(alphaDeg, betaDeg, thetaDeg)
-  }`
+    return Triple(alphaDeg, betaDeg, thetaDeg)
+}`
       }
     ],
     "Pythagorean Theorem": [
@@ -147,8 +147,8 @@ export const mathFunctions = {
         example: "val hypotenuse = math.pythagor(3f, 4f) // Returns 5f",
         code: `fun pythagor(sideA: Float, sideB: Float): Float {
       val hypotenuse = sideA.pow(2) + sideB.pow(2)
-      return sqrt(hypotenuse)
-  }`
+    return sqrt(hypotenuse)
+}`
       },
       {
         name: "pythagorCathetus",
@@ -161,8 +161,8 @@ export const mathFunctions = {
         example: "val leg = math.pythagorCathetus(3f, 5f) // Returns 4f",
         code: `fun pythagorCathetus(sideA: Float, hypotenuse: Float): Float{
       val sideB = hypotenuse.pow(2) - sideA.pow(2)
-      return sqrt(sideB)
-  }`
+    return sqrt(sideB)
+}`
       }
     ],
     "Square": [
@@ -175,8 +175,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val area = math.squareArea(5f) // Returns 25f",
         code: `fun squareArea(side: Float): Float{
-      return side.pow(2)
-  }`
+    return side.pow(2)
+}`
       },
       {
         name: "squarePerimeter",
@@ -187,8 +187,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val perimeter = math.squarePerimeter(5f) // Returns 20f",
         code: `fun squarePerimeter(side: Float): Float{
-      return side * 4
-  }`
+    return side * 4
+}`
       }
     ],
     "Rectangle": [
@@ -202,8 +202,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val area = math.rectArea(5f, 3f) // Returns 15f",
         code: `fun rectArea(sideA: Float, sideB: Float): Float{
-      return sideA * sideB
-  }`
+    return sideA * sideB
+}`
       },
       {
         name: "rectPerimeter",
@@ -215,8 +215,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val perimeter = math.rectPerimeter(5f, 3f) // Returns 16f",
         code: `fun rectPerimeter(sideA: Float, sideB: Float): Float{
-      return (sideA + sideB) * 2
-  }`
+    return (sideA + sideB) * 2
+}`
       }
     ],
     "Circle": [
@@ -229,8 +229,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val area = math.circleArea(5f) // Returns 78.54f",
         code: `fun circleArea(radius: Float): Float{
-      return PI.toFloat() * (radius.pow(2))
-  }`
+    return PI.toFloat() * (radius.pow(2))
+}`
       },
       {
         name: "circleLengthR",
@@ -241,8 +241,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val circumference = math.circleLengthR(5f) // Returns 31.42f",
         code: `fun circleLengthR(radius: Float): Float{
-      return 2 * PI.toFloat() * radius
-  }`
+    return 2 * PI.toFloat() * radius
+}`
       },
       {
         name: "circleLengthD",
@@ -253,8 +253,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val circumference = math.circleLengthD(10f) // Returns 31.42f",
         code: `fun circleLengthD(diameter: Float): Float{
-      return PI.toFloat() * diameter
-  }`
+    return PI.toFloat() * diameter
+}`
       }
     ],
     "Utility": [
