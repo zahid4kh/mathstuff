@@ -10,8 +10,8 @@ export const mathFunctions = {
         returnType: "Int",
         example: "val sum = math.addInt(5, 3) // Returns 8",
         code: `fun addInt(a: Int, b: Int): Int{
-                  return a+b
-              }`
+          return a+b
+      }`
       },
       {
         name: "addFloat",
@@ -23,8 +23,8 @@ export const mathFunctions = {
         returnType: "Float",
         example: "val sum = math.addFloat(5.2f, 3.7f) // Returns 8.9f",
         code: `fun addFloat(a: Float, b: Float): Float{
-              return a + b
-          }`
+          return a + b
+      }`
       },
       {
         name: "addDouble",
@@ -36,8 +36,8 @@ export const mathFunctions = {
         returnType: "Double",
         example: "val sum = math.addDouble(5.25, 3.75) // Returns 9.0",
         code: `fun addDouble(a: Double, b: Double): Double{
-      return a + b
-  }`
+    return a + b
+}`
       }
     ],
     "Triangle": [
@@ -291,8 +291,8 @@ export const mathFunctions = {
             returnType: "Float",
             example: "val volume = math.cuboidVolume(5f, 3f, 2f) // Returns 30f",
             code: `fun cuboidVolume(length: Float, width: Float, height: Float): Float {
-                        return length * width * height
-                    }`
+              return length * width * height
+          }`
         },
         {
             name: "cubeVolume",
@@ -303,8 +303,8 @@ export const mathFunctions = {
             returnType: "Float",
             example: "val volume = math.cubeVolume(2f, 2f, 2f) // Returns 8f",
               code: `fun cubeVolume(side: Float): Float{
-                  return side.pow(3)
-              }`
+              return side.pow(3)
+          }`
           }
       ]
   };
