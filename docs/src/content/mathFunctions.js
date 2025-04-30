@@ -319,9 +319,139 @@ export const mathFunctions = {
             ],
             returnType: "Float",
             example: "val volume = math.cubeVolume(2f, 2f, 2f) // Returns 8f",
-              code: `fun cubeVolume(side: Float): Float{
+            code: `fun cubeVolume(side: Float): Float{
     return side.pow(3)
 }`
-          }
-      ]
+        },
+        {
+          name: "cubeSurfaceArea",
+          description: "Calculate the surface area of a cube",
+          parameters: [
+              {name: "side", type: "Float", description: "Length of the cube's side"}
+          ],
+          returnType: "Float",
+          example: "val area = math.cubeSurfaceArea(2f) // Returns 24f",
+          code: `fun cubeSurfaceArea(side: Float): Float {
+    return 6 * side.pow(2)
+}`
+        },
+        {
+          name: "rectangularPrismVolume",
+          description: "Calculate the volume of a rectangular prism",
+          parameters: [
+            { name: "length", type: "Float", description: "Length of the prism" },
+            { name: "width", type: "Float", description: "Width of the prism" },
+            { name: "height", type: "Float", description: "Height of the prism" }
+          ],
+          returnType: "Float",
+          example: "val volume = math.rectangularPrismVolume(5f, 3f, 2f) // Returns 30f",
+          code: `fun rectangularPrismVolume(length: Float, width: Float, height: Float): Float {
+    return length * width * height
+}`
+      },
+      {
+          name: "rectangularPrismSurfaceArea",
+          description: "Calculate the surface area of a rectangular prism",
+          parameters: [
+            { name: "length", type: "Float", description: "Length of the prism" },
+            { name: "width", type: "Float", description: "Width of the prism" },
+            { name: "height", type: "Float", description: "Height of the prism" }
+          ],
+          returnType: "Float",
+          example: "val area = math.rectangularPrismSurfaceArea(5f, 3f, 2f) // Returns 62f",
+          code: `fun rectangularPrismSurfaceArea(length: Float, width: Float, height: Float): Float {
+    return 2 * (length * width + length * height + width * height)
+}`
+      },
+      {
+          name: "sphereVolume",
+          description: "Calculate the volume of a sphere",
+          parameters: [
+            { name: "radius", type: "Float", description: "Radius of the sphere" }
+          ],
+          returnType: "Float",
+          example: "val volume = math.sphereVolume(3f) // Returns 113.1f",
+          code: `fun sphereVolume(radius: Float): Float {
+    return ((4.0 / 3.0) * PI * radius.pow(3)).toFloat()
+}`
+      },
+      {
+          name: "sphereSurfaceArea",
+          description: "Calculate the surface area of a sphere",
+          parameters: [
+            { name: "radius", type: "Float", description: "Radius of the sphere" }
+          ],
+          returnType: "Float",
+          example: "val area = math.sphereSurfaceArea(3f) // Returns 113.1f",
+          code: `fun sphereSurfaceArea(radius: Float): Float {
+    return (4 * PI * radius.pow(2)).toFloat()
+}`
+      },
+      {
+          name: "cylinderVolume",
+          description: "Calculate the volume of a cylinder",
+          parameters: [
+            { name: "radius", type: "Float", description: "Radius of the cylinder base" },
+            { name: "height", type: "Float", description: "Height of the cylinder" }
+          ],
+          returnType: "Float",
+          example: "val volume = math.cylinderVolume(2f, 5f) // Returns 62.83f",
+          code: `fun cylinderVolume(radius: Float, height: Float): Float {
+    return (PI * height * radius.pow(2)).toFloat()
+}`
+      },
+      {
+          name: "cylinderSurfaceArea",
+          description: "Calculate the surface area of a cylinder",
+          parameters: [
+            { name: "radius", type: "Float", description: "Radius of the cylinder base" },
+            { name: "height", type: "Float", description: "Height of the cylinder" }
+          ],
+          returnType: "Float",
+          example: "val area = math.cylinderSurfaceArea(2f, 5f) // Returns 87.96f",
+          code: `fun cylinderSurfaceArea(radius: Float, height: Float): Float {
+    return (2 * PI * radius * (radius + height)).toFloat()
+}`
+      },
+      {
+          name: "coneVolume",
+          description: "Calculate the volume of a cone",
+          parameters: [
+            { name: "radius", type: "Float", description: "Radius of the cone base" },
+            { name: "height", type: "Float", description: "Height of the cone" }
+          ],
+          returnType: "Float",
+          example: "val volume = math.coneVolume(3f, 6f) // Returns 56.55f",
+          code: `fun coneVolume(radius: Float, height: Float): Float {
+    return ((1.0 / 3.0) * PI * height * radius.pow(2)).toFloat()
+}`
+      },
+      {
+          name: "coneSurfaceArea",
+          description: "Calculate the surface area of a cone",
+          parameters: [
+            { name: "radius", type: "Float", description: "Radius of the cone base" },
+            { name: "height", type: "Float", description: "Height of the cone" }
+          ],
+          returnType: "Float",
+          example: "val area = math.coneSurfaceArea(3f, 6f) // Returns 84.82f",
+          code: `fun coneSurfaceArea(radius: Float, height: Float): Float {
+    return (PI * radius * (radius + sqrt(height.pow(2) + radius.pow(2)))).toFloat()
+}`
+      },
+      {
+          name: "pyramidVolume",
+          description: "Calculate the volume of a rectangular pyramid",
+          parameters: [
+            { name: "baseLength", type: "Float", description: "Length of the pyramid base" },
+            { name: "baseWidth", type: "Float", description: "Width of the pyramid base" },
+            { name: "height", type: "Float", description: "Height of the pyramid" }
+          ],
+          returnType: "Float",
+          example: "val volume = math.pyramidVolume(6f, 4f, 5f) // Returns 40f",
+          code: `fun pyramidVolume(baseLength: Float, baseWidth: Float, height: Float): Float {
+    return ((1.0 / 3.0) * baseLength * baseWidth * height).toFloat()
+}`
+      }
+    ]
   };
