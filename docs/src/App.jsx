@@ -156,10 +156,7 @@ function App() {
 
                   <p className="mt-4 md:mt-6 mb-3 md:mb-4 text-sm md:text-base">Basic usage:</p>
                   <CodeBlock
-                    code={`// Import the package
-import math.Math
-
-// Create an instance
+                    code={`// Create an instance
 val math = Math()
 
 // Use the functions
