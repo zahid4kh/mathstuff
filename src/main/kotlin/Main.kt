@@ -4,5 +4,5 @@ fun main(){
 
     val math = Math()
 
-    println(math.triangleSide(4f, 7f, 110f))
+    println(math.median(numbers = listOf(1f, 2f, 2f, 3f)))
 }

@@ -1,5 +1,54 @@
 export const mathFunctions = {
     "Basic Arithmetic": [
+        {
+            name: "mean",
+            description: "Calculate the mean of a list of numbers",
+            parameters: [{name: "numbers", type: "List<Float>", description: "List of numbers"}],
+            returnType: "Float",
+            example: "val mean = math.mean(listOf(1f, 2f, 3f)) // Returns 2f",
+            code: `fun mean(numbers: List<Float>): Float {
+    return if (numbers.isNotEmpty()) {
+        numbers.sum() / numbers.size
+    } else {
+        0f
+    }
+}`
+        },
+        {
+            name: "median",
+            description: "Calculate the median of a list of numbers",
+            parameters: [{name: "numbers", type: "List<Float>", description: "List of numbers"}],
+            returnType: "Float",
+            example: "val median = math.median(listOf(1f, 2f, 3f)) // Returns 2f",
+            code: `fun median(numbers: List<Float>): Float {
+    if (numbers.isEmpty()) return 0f
+
+    val sorted = numbers.sorted()
+    val middle = sorted.size / 2
+
+    return if (sorted.size % 2 == 0) {
+        (sorted[middle - 1] + sorted[middle]) / 2
+    } else {
+        sorted[middle]
+    }
+}`
+        },
+        {
+            name: "mode",
+            description: "Calculate the mode of a list of numbers",
+            parameters: [{name: "numbers", type: "List<Float>", description: "List of numbers"}],
+            returnType: "List<Float>",
+            example: "val mode = math.mode(listOf(1f, 2f, 2f, 3f)) // Returns [2f]",
+            code: `fun mode(numbers: List<Float>): Float {
+    if (numbers.isEmpty()) return 0f
+
+    val frequencyMap = numbers.groupingBy { it }.eachCount()
+    val maxFrequency = frequencyMap.values.maxOrNull() ?: return 0f
+    val modes = frequencyMap.filterValues { it == maxFrequency }.keys
+
+    return modes.minOrNull() ?: 0f
+}`
+        },
       {
         name: "addInt",
         description: "Add two integers",
