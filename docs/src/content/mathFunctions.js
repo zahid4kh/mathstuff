@@ -406,39 +406,6 @@ export const mathFunctions = {
       example: "val perimeter = rectPerimeter(5f, 3f) // Returns 16f",
     },
   ],
-  Circle: [
-    {
-      name: "circleArea",
-      description: "Calculate the area of a circle",
-      parameters: [
-        { name: "radius", type: "Float", description: "Radius of the circle" },
-      ],
-      returnType: "Float",
-      example: "val area = circleArea(5f) // Returns 78.54f",
-    },
-    {
-      name: "circleLengthR",
-      description: "Calculate the circumference of a circle using radius",
-      parameters: [
-        { name: "radius", type: "Float", description: "Radius of the circle" },
-      ],
-      returnType: "Float",
-      example: "val circumference = circleLengthR(5f) // Returns 31.42f",
-    },
-    {
-      name: "circleLengthD",
-      description: "Calculate the circumference of a circle using diameter",
-      parameters: [
-        {
-          name: "diameter",
-          type: "Float",
-          description: "Diameter of the circle",
-        },
-      ],
-      returnType: "Float",
-      example: "val circumference = circleLengthD(10f) // Returns 31.42f",
-    },
-  ],
   Utility: [
     {
       name: "Float.toDegrees",
@@ -619,6 +586,37 @@ export const mathFunctions = {
     },
   ],
   "2D Shapes": [
+    {
+      name: "circleArea",
+      description: "Calculate the area of a circle",
+      parameters: [
+        { name: "radius", type: "Float", description: "Radius of the circle" },
+      ],
+      returnType: "Float",
+      example: "val area = circleArea(5f) // Returns 78.54f",
+    },
+    {
+      name: "circleLengthR",
+      description: "Calculate the circumference of a circle using radius",
+      parameters: [
+        { name: "radius", type: "Float", description: "Radius of the circle" },
+      ],
+      returnType: "Float",
+      example: "val circumference = circleLengthR(5f) // Returns 31.42f",
+    },
+    {
+      name: "circleLengthD",
+      description: "Calculate the circumference of a circle using diameter",
+      parameters: [
+        {
+          name: "diameter",
+          type: "Float",
+          description: "Diameter of the circle",
+        },
+      ],
+      returnType: "Float",
+      example: "val circumference = circleLengthD(10f) // Returns 31.42f",
+    },
     {
       name: "arcLength",
       description:
