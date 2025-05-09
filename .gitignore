@@ -17,6 +17,7 @@ out/
 !**/src/test/**/out/
 .idea
 newstuff.md
+python.py
 
 ### Kotlin ###
 .kotlin
