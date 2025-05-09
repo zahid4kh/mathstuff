@@ -1,9 +1,26 @@
 package math.twoD.rectangle
 
+import kotlin.math.abs
+import kotlin.math.sqrt
+
+/**
+ * Calculates the area of a rectangle.
+ *
+ * @param sideA The length of one side of the rectangle.
+ * @param sideB The length of the other side of the rectangle.
+ * @return The area of the rectangle, calculated as `sideA * sideB`.
+ */
 fun rectArea(sideA: Float, sideB: Float): Float{
     return sideA * sideB
 }
 
+/**
+ * Calculates the perimeter of a rectangle.
+ *
+ * @param sideA The length of one side of the rectangle.
+ * @param sideB The length of the other side of the rectangle.
+ * @return The perimeter of the rectangle, calculated as `(sideA + sideB) * 2`.
+ */
 fun rectPerimeter(sideA: Float, sideB: Float): Float{
     return (sideA + sideB) * 2
 }
