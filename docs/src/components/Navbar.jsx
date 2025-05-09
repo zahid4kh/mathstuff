@@ -1,6 +1,6 @@
-import React from 'react';
-import { ThemeToggle } from './ThemeToggle';
-import { Github } from 'lucide-react';
+import React from "react";
+import { ThemeToggle } from "./ThemeToggle";
+import { Github } from "lucide-react";
 
 export default function Navbar() {
   return (
@@ -8,15 +8,20 @@ export default function Navbar() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <div className="flex items-center gap-2 md:gap-3">
           <div className="flex h-7 w-7 md:h-8 md:w-8 items-center justify-center rounded-md bg-primary">
-            <span className="text-base md:text-lg font-bold text-primary-foreground">M</span>
+            <span className="text-base md:text-lg font-bold text-primary-foreground">
+              M
+            </span>
           </div>
           <div className="flex flex-col">
-            <span className="text-base md:text-lg font-bold tracking-tight">MathStuff</span>
-            <span className="text-[10px] md:text-xs text-muted-foreground">1.0.9</span>
+            <span className="text-base md:text-lg font-bold tracking-tight">
+              MathStuff
+            </span>
+            <span className="text-[10px] md:text-xs text-muted-foreground">
+              1.1.0
+            </span>
           </div>
         </div>
         <div className="flex items-center gap-3 md:gap-4">
-          
           <a
             href="https://github.com/zahid4kh/mathstuff"
             target="_blank"
