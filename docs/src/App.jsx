@@ -142,7 +142,7 @@ function App() {
 
                   <p className="mt-4 md:mt-6 mb-3 md:mb-4 text-sm md:text-base">Add the dependency:</p>
                   <CodeBlock
-                    code={`implementation("com.github.zahid4kh:mathstuff:1.0.8")`}
+                    code={`implementation("com.github.zahid4kh:mathstuff:1.0.9")`}
                     language="kotlin"
                   />
 
