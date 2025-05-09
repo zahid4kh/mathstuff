@@ -5,21 +5,21 @@ export const mathFunctions = {
             description: "Calculate the mean of a list of numbers",
             parameters: [{name: "numbers", type: "List<Float>", description: "List of numbers"}],
             returnType: "Float",
-            example: "val mean = math.mean(listOf(1f, 2f, 3f)) // Returns 2f",
+            example: "val mean = mean(listOf(1f, 2f, 3f)) // Returns 2f",
         },
         {
             name: "median",
             description: "Calculate the median of a list of numbers",
             parameters: [{name: "numbers", type: "List<Float>", description: "List of numbers"}],
             returnType: "Float",
-            example: "val median = math.median(listOf(1f, 2f, 3f)) // Returns 2f"
+            example: "val median = median(listOf(1f, 2f, 3f)) // Returns 2f"
         },
         {
             name: "mode",
             description: "Calculate the mode of a list of numbers",
             parameters: [{name: "numbers", type: "List<Float>", description: "List of numbers"}],
             returnType: "List<Float>",
-            example: "val mode = math.mode(listOf(1f, 2f, 2f, 3f)) // Returns [2f]"
+            example: "val mode = mode(listOf(1f, 2f, 2f, 3f)) // Returns [2f]"
         },
       {
         name: "addInt",
@@ -29,7 +29,7 @@ export const mathFunctions = {
           { name: "b", type: "Int", description: "Second integer" }
         ],
         returnType: "Int",
-        example: "val sum = math.addInt(5, 3) // Returns 8"
+        example: "val sum = addInt(5, 3) // Returns 8"
       },
       {
         name: "addFloat",
@@ -39,7 +39,7 @@ export const mathFunctions = {
           { name: "b", type: "Float", description: "Second float" }
         ],
         returnType: "Float",
-        example: "val sum = math.addFloat(5.2f, 3.7f) // Returns 8.9f"
+        example: "val sum = addFloat(5.2f, 3.7f) // Returns 8.9f"
       },
       {
         name: "addDouble",
@@ -49,7 +49,7 @@ export const mathFunctions = {
           { name: "b", type: "Double", description: "Second double" }
         ],
         returnType: "Double",
-        example: "val sum = math.addDouble(5.25, 3.75) // Returns 9.0"
+        example: "val sum = addDouble(5.25, 3.75) // Returns 9.0"
       }
     ],
     "Triangle": [
@@ -61,7 +61,7 @@ export const mathFunctions = {
           { name: "base", type: "Float", description: "Base of the triangle" }
         ],
         returnType: "Float",
-        example: "val area = math.triangleArea(10f, 5f) // Returns 25f"
+        example: "val area = triangleArea(10f, 5f) // Returns 25f"
       },
       {
         name: "triangleArea (with 3 sides)",
@@ -72,7 +72,7 @@ export const mathFunctions = {
           { name: "sideC", type: "Float", description: "Length of third side" }
         ],
         returnType: "Float",
-        example: "val area = math.triangleArea(3f, 4f, 5f) // Returns 6f"
+        example: "val area = triangleArea(3f, 4f, 5f) // Returns 6f"
       },
       {
         name: "trianglePerimeter",
@@ -83,7 +83,7 @@ export const mathFunctions = {
           { name: "sideC", type: "Float", description: "Length of third side" }
         ],
         returnType: "Float",
-        example: "val perimeter = math.trianglePerimeter(3f, 4f, 5f) // Returns 12f"
+        example: "val perimeter = trianglePerimeter(3f, 4f, 5f) // Returns 12f"
       },
       {
         name: "triangleAngles",
@@ -95,7 +95,7 @@ export const mathFunctions = {
           { name: "showLogs", type: "Boolean", description: "Whether to print calculation logs", default: "true" }
         ],
         returnType: "Triple<Float, Float, Float>?",
-        example: "val angles = math.triangleAngles(3f, 4f, 5f) // Returns (36.9f, 53.1f, 90.0f)"
+        example: "val angles = triangleAngles(3f, 4f, 5f) // Returns (36.9f, 53.1f, 90.0f)"
       },
       {
         name: "triangleSide",
@@ -106,7 +106,7 @@ export const mathFunctions = {
           { name: "angleBetween", type: "Float", description: "Angle between sideA and sideB in degrees" }
         ],
         returnType: "Float",
-        example: "val sideC = math.triangleSide(4f, 7f, 110f) // Returns 9.1735"
+        example: "val sideC = triangleSide(4f, 7f, 110f) // Returns 9.1735"
       },
       {
           name: "equilateralTriangleArea",
@@ -115,7 +115,7 @@ export const mathFunctions = {
               { name: "side", type: "Float", description: "Length of each side of the equilateral triangle" }
           ],
           returnType: "Float",
-          example: "val area = math.equilateralTriangleArea(5f) // Returns 10.83f"
+          example: "val area = equilateralTriangleArea(5f) // Returns 10.83f"
       },
       {
           name: "equilateralTrianglePerimeter",
@@ -124,7 +124,7 @@ export const mathFunctions = {
               { name: "side", type: "Float", description: "Length of each side of the equilateral triangle" }
           ],
           returnType: "Float",
-          example: "val perimeter = math.equilateralTrianglePerimeter(5f) // Returns 15f"
+          example: "val perimeter = equilateralTrianglePerimeter(5f) // Returns 15f"
       },
       {
           name: "isoscelesTriangleHeight",
@@ -134,7 +134,7 @@ export const mathFunctions = {
               { name: "base", type: "Float", description: "Length of the base" }
           ],
           returnType: "Float",
-          example: "val height = math.isoscelesTriangleHeight(5f, 6f) // Returns 4.0f"
+          example: "val height = isoscelesTriangleHeight(5f, 6f) // Returns 4.0f"
       },
       {
           name: "isoscelesTriangleArea",
@@ -144,7 +144,7 @@ export const mathFunctions = {
               { name: "base", type: "Float", description: "Length of the base" }
           ],
           returnType: "Float",
-          example: "val area = math.isoscelesTriangleArea(5f, 6f) // Returns 12.0f"
+          example: "val area = isoscelesTriangleArea(5f, 6f) // Returns 12.0f"
       },
       {
           name: "isoscelesTrianglePerimeter",
@@ -154,7 +154,7 @@ export const mathFunctions = {
               { name: "base", type: "Float", description: "Length of the base" }
           ],
           returnType: "Float",
-          example: "val perimeter = math.isoscelesTrianglePerimeter(5f, 6f) // Returns 16f"
+          example: "val perimeter = isoscelesTrianglePerimeter(5f, 6f) // Returns 16f"
       },
       {
           name: "triangleHeight",
@@ -166,7 +166,7 @@ export const mathFunctions = {
               { name: "respectToSide", type: "Float", description: "Which side to use as the base" }
           ],
           returnType: "Float",
-          example: "val height = math.triangleHeight(3f, 4f, 5f, 3f) // Returns 4.0f (height with respect to side of length 3)"
+          example: "val height = triangleHeight(3f, 4f, 5f, 3f) // Returns 4.0f (height with respect to side of length 3)"
       },
       {
           name: "triangleSemiPerimeter",
@@ -177,7 +177,7 @@ export const mathFunctions = {
               { name: "sideC", type: "Float", description: "Length of the third side" }
           ],
           returnType: "Float",
-          example: "val semiPerimeter = math.triangleSemiPerimeter(3f, 4f, 5f) // Returns 6f"
+          example: "val semiPerimeter = triangleSemiPerimeter(3f, 4f, 5f) // Returns 6f"
       },
       {
           name: "lawOfSines",
@@ -188,7 +188,7 @@ export const mathFunctions = {
               { name: "angleA", type: "Float", description: "Angle (in radians) opposite to sideA" }
           ],
           returnType: "Float",
-          example: "val angleB = math.lawOfSines(3f, 4f, PI/6f) // Returns the angle (in radians) opposite to sideB"
+          example: "val angleB = lawOfSines(3f, 4f, PI/6f) // Returns the angle (in radians) opposite to sideB"
       },
       {
           name: "lawOfCosines",
@@ -199,7 +199,7 @@ export const mathFunctions = {
               { name: "sideC", type: "Float", description: "Length of the third side" }
           ],
           returnType: "Float",
-          example: "val angleC = math.lawOfCosines(3f, 4f, 5f) // Returns the angle (in radians) opposite to sideC"
+          example: "val angleC = lawOfCosines(3f, 4f, 5f) // Returns the angle (in radians) opposite to sideC"
       }
     ],
     "Pythagorean Theorem": [
@@ -211,7 +211,7 @@ export const mathFunctions = {
           { name: "sideB", type: "Float", description: "Length of the second leg" }
         ],
         returnType: "Float",
-        example: "val hypotenuse = math.pythagor(3f, 4f) // Returns 5f"
+        example: "val hypotenuse = pythagor(3f, 4f) // Returns 5f"
       },
       {
         name: "pythagorCathetus",
@@ -221,7 +221,7 @@ export const mathFunctions = {
           { name: "hypotenuse", type: "Float", description: "Length of the hypotenuse" }
         ],
         returnType: "Float",
-        example: "val leg = math.pythagorCathetus(3f, 5f) // Returns 4f"
+        example: "val leg = pythagorCathetus(3f, 5f) // Returns 4f"
       }
     ],
     "Square": [
@@ -232,7 +232,7 @@ export const mathFunctions = {
           { name: "side", type: "Float", description: "Length of the side" }
         ],
         returnType: "Float",
-        example: "val area = math.squareArea(5f) // Returns 25f"
+        example: "val area = squareArea(5f) // Returns 25f"
       },
       {
         name: "squarePerimeter",
@@ -241,7 +241,7 @@ export const mathFunctions = {
           { name: "side", type: "Float", description: "Length of the side" }
         ],
         returnType: "Float",
-        example: "val perimeter = math.squarePerimeter(5f) // Returns 20f"
+        example: "val perimeter = squarePerimeter(5f) // Returns 20f"
       }
     ],
     "Rectangle": [
@@ -253,7 +253,7 @@ export const mathFunctions = {
           { name: "sideB", type: "Float", description: "Width of the rectangle" }
         ],
         returnType: "Float",
-        example: "val area = math.rectArea(5f, 3f) // Returns 15f"
+        example: "val area = rectArea(5f, 3f) // Returns 15f"
       },
       {
         name: "rectPerimeter",
@@ -263,7 +263,7 @@ export const mathFunctions = {
           { name: "sideB", type: "Float", description: "Width of the rectangle" }
         ],
         returnType: "Float",
-        example: "val perimeter = math.rectPerimeter(5f, 3f) // Returns 16f"
+        example: "val perimeter = rectPerimeter(5f, 3f) // Returns 16f"
       }
     ],
     "Circle": [
@@ -274,7 +274,7 @@ export const mathFunctions = {
           { name: "radius", type: "Float", description: "Radius of the circle" }
         ],
         returnType: "Float",
-        example: "val area = math.circleArea(5f) // Returns 78.54f"
+        example: "val area = circleArea(5f) // Returns 78.54f"
       },
       {
         name: "circleLengthR",
@@ -283,7 +283,7 @@ export const mathFunctions = {
           { name: "radius", type: "Float", description: "Radius of the circle" }
         ],
         returnType: "Float",
-        example: "val circumference = math.circleLengthR(5f) // Returns 31.42f"
+        example: "val circumference = circleLengthR(5f) // Returns 31.42f"
       },
       {
         name: "circleLengthD",
@@ -292,7 +292,7 @@ export const mathFunctions = {
           { name: "diameter", type: "Float", description: "Diameter of the circle" }
         ],
         returnType: "Float",
-        example: "val circumference = math.circleLengthD(10f) // Returns 31.42f"
+        example: "val circumference = circleLengthD(10f) // Returns 31.42f"
       }
     ],
     "Utility": [
@@ -321,7 +321,7 @@ export const mathFunctions = {
               { name: "height", type: "Float", description: "Height of the cuboid" }
             ],
             returnType: "Float",
-            example: "val volume = math.cuboidVolume(5f, 3f, 2f) // Returns 30f"
+            example: "val volume = cuboidVolume(5f, 3f, 2f) // Returns 30f"
         },
         {
             name: "cubeVolume",
@@ -330,7 +330,7 @@ export const mathFunctions = {
                 {name: "side", type: "Float", description: "Length of the cube's side"}
             ],
             returnType: "Float",
-            example: "val volume = math.cubeVolume(2f, 2f, 2f) // Returns 8f"
+            example: "val volume = cubeVolume(2f, 2f, 2f) // Returns 8f"
         },
         {
           name: "cubeSurfaceArea",
@@ -339,7 +339,7 @@ export const mathFunctions = {
               {name: "side", type: "Float", description: "Length of the cube's side"}
           ],
           returnType: "Float",
-          example: "val area = math.cubeSurfaceArea(2f) // Returns 24f"
+          example: "val area = cubeSurfaceArea(2f) // Returns 24f"
         },
         {
           name: "rectangularPrismVolume",
@@ -350,7 +350,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the prism" }
           ],
           returnType: "Float",
-          example: "val volume = math.rectangularPrismVolume(5f, 3f, 2f) // Returns 30f"
+          example: "val volume = rectangularPrismVolume(5f, 3f, 2f) // Returns 30f"
       },
       {
           name: "rectangularPrismSurfaceArea",
@@ -361,7 +361,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the prism" }
           ],
           returnType: "Float",
-          example: "val area = math.rectangularPrismSurfaceArea(5f, 3f, 2f) // Returns 62f"
+          example: "val area = rectangularPrismSurfaceArea(5f, 3f, 2f) // Returns 62f"
       },
       {
           name: "sphereVolume",
@@ -370,7 +370,7 @@ export const mathFunctions = {
             { name: "radius", type: "Float", description: "Radius of the sphere" }
           ],
           returnType: "Float",
-          example: "val volume = math.sphereVolume(3f) // Returns 113.1f"
+          example: "val volume = sphereVolume(3f) // Returns 113.1f"
       },
       {
           name: "sphereSurfaceArea",
@@ -379,7 +379,7 @@ export const mathFunctions = {
             { name: "radius", type: "Float", description: "Radius of the sphere" }
           ],
           returnType: "Float",
-          example: "val area = math.sphereSurfaceArea(3f) // Returns 113.1f"
+          example: "val area = sphereSurfaceArea(3f) // Returns 113.1f"
       },
       {
           name: "cylinderVolume",
@@ -389,7 +389,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the cylinder" }
           ],
           returnType: "Float",
-          example: "val volume = math.cylinderVolume(2f, 5f) // Returns 62.83f"
+          example: "val volume = cylinderVolume(2f, 5f) // Returns 62.83f"
       },
       {
           name: "cylinderSurfaceArea",
@@ -399,7 +399,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the cylinder" }
           ],
           returnType: "Float",
-          example: "val area = math.cylinderSurfaceArea(2f, 5f) // Returns 87.96f"
+          example: "val area = cylinderSurfaceArea(2f, 5f) // Returns 87.96f"
       },
       {
           name: "coneVolume",
@@ -409,7 +409,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the cone" }
           ],
           returnType: "Float",
-          example: "val volume = math.coneVolume(3f, 6f) // Returns 56.55f"
+          example: "val volume = coneVolume(3f, 6f) // Returns 56.55f"
       },
       {
           name: "coneSurfaceArea",
@@ -419,7 +419,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the cone" }
           ],
           returnType: "Float",
-          example: "val area = math.coneSurfaceArea(3f, 6f) // Returns 84.82f"
+          example: "val area = coneSurfaceArea(3f, 6f) // Returns 84.82f"
       },
       {
           name: "pyramidVolume",
@@ -430,7 +430,7 @@ export const mathFunctions = {
             { name: "height", type: "Float", description: "Height of the pyramid" }
           ],
           returnType: "Float",
-          example: "val volume = math.pyramidVolume(6f, 4f, 5f) // Returns 40f"
+          example: "val volume = pyramidVolume(6f, 4f, 5f) // Returns 40f"
       }
     ],
     "2D Shapes": [
@@ -442,7 +442,7 @@ export const mathFunctions = {
                 { name: "angleRadians", type: "Float", description: "Angle of the arc in radians" }
             ],
             returnType: "Float",
-            example: "val length = math.arcLength(5f, PI.toFloat()/2) // Returns 7.85f (quarter circle)"
+            example: "val length = arcLength(5f, PI.toFloat()/2) // Returns 7.85f (quarter circle)"
         },
         {
             name: "sectorArea",
@@ -452,7 +452,7 @@ export const mathFunctions = {
                 { name: "angleRadians", type: "Float", description: "Angle of the sector in radians" }
             ],
             returnType: "Float",
-            example: "val area = math.sectorArea(5f, PI.toFloat()/2) // Returns 19.63f (quarter circle)"
+            example: "val area = sectorArea(5f, PI.toFloat()/2) // Returns 19.63f (quarter circle)"
         },
         {
             name: "trapezoidArea",
@@ -463,7 +463,7 @@ export const mathFunctions = {
                 { name: "height", type: "Float", description: "Height between the parallel sides" }
             ],
             returnType: "Float",
-            example: "val area = math.trapezoidArea(3f, 5f, 4f) // Returns 16f"
+            example: "val area = trapezoidArea(3f, 5f, 4f) // Returns 16f"
         },
         {
             name: "regularPolygonArea",
@@ -473,7 +473,7 @@ export const mathFunctions = {
                 { name: "sideLength", type: "Float", description: "Length of each side" }
             ],
             returnType: "Float",
-            example: "val area = math.regularPolygonArea(6, 4f) // Returns 41.57f (regular hexagon)"
+            example: "val area = regularPolygonArea(6, 4f) // Returns 41.57f (regular hexagon)"
         },
         {
             name: "parallelogramArea",
@@ -483,7 +483,7 @@ export const mathFunctions = {
                 { name: "height", type: "Float", description: "Height perpendicular to the base" }
             ],
             returnType: "Float",
-            example: "val area = math.parallelogramArea(5f, 3f) // Returns 15f"
+            example: "val area = parallelogramArea(5f, 3f) // Returns 15f"
         },
         {
             name: "rhombusArea",
@@ -493,7 +493,7 @@ export const mathFunctions = {
                 { name: "diagonal2", type: "Float", description: "Length of second diagonal" }
             ],
             returnType: "Float",
-            example: "val area = math.rhombusArea(6f, 8f) // Returns 24f"
+            example: "val area = rhombusArea(6f, 8f) // Returns 24f"
         },
         {
             name: "ellipsArea",
@@ -503,7 +503,7 @@ export const mathFunctions = {
                 { name: "semiMinorAxis", type: "Float", description: "Length of the semi-minor axis" }
             ],
             returnType: "Float",
-            example: "val area = math.ellipsArea(5f, 3f) // Returns 47.12f"
+            example: "val area = ellipsArea(5f, 3f) // Returns 47.12f"
         }
     ],
     "Vectors": [
@@ -515,7 +515,7 @@ export const mathFunctions = {
                 { name: "vec2", type: "FloatArray", description: "Second vector" }
             ],
             returnType: "FloatArray",
-            example: "val result = math.vectorAdd(floatArrayOf(1f, 2f, 3f), floatArrayOf(4f, 5f, 6f)) // Returns [5f, 7f, 9f]"
+            example: "val result = vectorAdd(floatArrayOf(1f, 2f, 3f), floatArrayOf(4f, 5f, 6f)) // Returns [5f, 7f, 9f]"
         },
         {
             name: "vectorSubtract",
@@ -525,7 +525,7 @@ export const mathFunctions = {
                 { name: "vec2", type: "FloatArray", description: "Vector to subtract" }
             ],
             returnType: "FloatArray",
-            example: "val result = math.vectorSubtract(floatArrayOf(5f, 7f, 9f), floatArrayOf(1f, 2f, 3f)) // Returns [4f, 5f, 6f]"
+            example: "val result = vectorSubtract(floatArrayOf(5f, 7f, 9f), floatArrayOf(1f, 2f, 3f)) // Returns [4f, 5f, 6f]"
         },
         {
             name: "dotProduct",
@@ -535,7 +535,7 @@ export const mathFunctions = {
                 { name: "vec2", type: "FloatArray", description: "Second vector" }
             ],
             returnType: "Float",
-            example: "val result = math.dotProduct(floatArrayOf(1f, 2f, 3f), floatArrayOf(4f, 5f, 6f)) // Returns 32f"
+            example: "val result = dotProduct(floatArrayOf(1f, 2f, 3f), floatArrayOf(4f, 5f, 6f)) // Returns 32f"
         },
         {
             name: "crossProduct",
@@ -545,7 +545,7 @@ export const mathFunctions = {
                 { name: "vec2", type: "FloatArray", description: "Second 3D vector" }
             ],
             returnType: "FloatArray",
-            example: "val result = math.crossProduct(floatArrayOf(1f, 0f, 0f), floatArrayOf(0f, 1f, 0f)) // Returns [0f, 0f, 1f]"
+            example: "val result = crossProduct(floatArrayOf(1f, 0f, 0f), floatArrayOf(0f, 1f, 0f)) // Returns [0f, 0f, 1f]"
         },
         {
             name: "vectorMagnitude",
@@ -554,7 +554,7 @@ export const mathFunctions = {
                 { name: "vec", type: "FloatArray", description: "Input vector" }
             ],
             returnType: "Float",
-            example: "val magnitude = math.vectorMagnitude(floatArrayOf(3f, 4f)) // Returns 5f"
+            example: "val magnitude = vectorMagnitude(floatArrayOf(3f, 4f)) // Returns 5f"
         },
         {
             name: "unitVector",
@@ -563,7 +563,7 @@ export const mathFunctions = {
                 { name: "vec", type: "FloatArray", description: "Input vector" }
             ],
             returnType: "FloatArray",
-            example: "val unit = math.unitVector(floatArrayOf(3f, 0f, 0f)) // Returns [1f, 0f, 0f]"
+            example: "val unit = unitVector(floatArrayOf(3f, 0f, 0f)) // Returns [1f, 0f, 0f]"
         },
         {
             name: "angleBetweenVectors",
@@ -573,7 +573,7 @@ export const mathFunctions = {
                 { name: "vec2", type: "FloatArray", description: "Second vector" }
             ],
             returnType: "Float",
-            example: "val angle = math.angleBetweenVectors(floatArrayOf(1f, 0f), floatArrayOf(0f, 1f)) // Returns PI/2 (90 degrees)"
+            example: "val angle = angleBetweenVectors(floatArrayOf(1f, 0f), floatArrayOf(0f, 1f)) // Returns PI/2 (90 degrees)"
         }
     ],
     "Coordinate Geometry": [
@@ -587,7 +587,7 @@ export const mathFunctions = {
                 { name: "y2", type: "Float", description: "y-coordinate of second point" }
             ],
             returnType: "Float",
-            example: "val dist = math.distance2D(1f, 2f, 4f, 6f) // Returns 5f"
+            example: "val dist = distance2D(1f, 2f, 4f, 6f) // Returns 5f"
         },
         {
             name: "distance3D",
@@ -601,7 +601,7 @@ export const mathFunctions = {
                 { name: "z2", type: "Float", description: "z-coordinate of second point" }
             ],
             returnType: "Float",
-            example: "val dist = math.distance3D(1f, 2f, 3f, 4f, 5f, 6f) // Returns 5.196f"
+            example: "val dist = distance3D(1f, 2f, 3f, 4f, 5f, 6f) // Returns 5.196f"
         },
         {
             name: "midpoint2D",
@@ -613,7 +613,7 @@ export const mathFunctions = {
                 { name: "y2", type: "Float", description: "y-coordinate of second point" }
             ],
             returnType: "Pair<Float, Float>",
-            example: "val mid = math.midpoint2D(1f, 2f, 5f, 8f) // Returns Pair(3f, 5f)"
+            example: "val mid = midpoint2D(1f, 2f, 5f, 8f) // Returns Pair(3f, 5f)"
         },
         {
             name: "midpoint3D",
@@ -627,7 +627,7 @@ export const mathFunctions = {
                 { name: "z2", type: "Float", description: "z-coordinate of second point" }
             ],
             returnType: "Triple<Float, Float, Float>",
-            example: "val mid = math.midpoint3D(2f, 4f, 6f, 4f, 8f, 10f) // Returns Triple(3f, 6f, 8f)"
+            example: "val mid = midpoint3D(2f, 4f, 6f, 4f, 8f, 10f) // Returns Triple(3f, 6f, 8f)"
         },
         {
             name: "slope",
@@ -639,7 +639,7 @@ export const mathFunctions = {
                 { name: "y2", type: "Float", description: "y-coordinate of second point" }
             ],
             returnType: "Float",
-            example: "val m = math.slope(1f, 2f, 4f, 8f) // Returns 2f"
+            example: "val m = slope(1f, 2f, 4f, 8f) // Returns 2f"
         },
         {
             name: "lineEquation",
@@ -651,7 +651,7 @@ export const mathFunctions = {
                 { name: "y2", type: "Float", description: "y-coordinate of second point" }
             ],
             returnType: "Triple<Float, Float, Float>",
-            example: "val coeffs = math.lineEquation(1f, 1f, 2f, 2f) // Returns Triple(1f, -1f, 0f) for the equation x - y = 0"
+            example: "val coeffs = lineEquation(1f, 1f, 2f, 2f) // Returns Triple(1f, -1f, 0f) for the equation x - y = 0"
         },
         {
             name: "distancePointToLine",
@@ -664,7 +664,7 @@ export const mathFunctions = {
                 { name: "c", type: "Float", description: "c coefficient in the line equation ax + by + c = 0" }
             ],
             returnType: "Float",
-            example: "val dist = math.distancePointToLine(2f, 3f, 1f, -1f, 0f) // Distance from point (2,3) to line x - y = 0"
+            example: "val dist = distancePointToLine(2f, 3f, 1f, -1f, 0f) // Distance from point (2,3) to line x - y = 0"
         },
         {
             name: "areCollinear",
@@ -678,7 +678,7 @@ export const mathFunctions = {
                 { name: "y3", type: "Float", description: "y-coordinate of third point" }
             ],
             returnType: "Boolean",
-            example: "val collinear = math.areCollinear(1f, 1f, 2f, 2f, 3f, 3f) // Returns true as points lie on the same line"
+            example: "val collinear = areCollinear(1f, 1f, 2f, 2f, 3f, 3f) // Returns true as points lie on the same line"
         }
     ]
   };
