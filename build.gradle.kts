@@ -3,7 +3,7 @@ plugins {
     `java-library`
 }
 
-group = "math"
+group = "mathstuff"
 version = "1.0.8"
 
 repositories {
