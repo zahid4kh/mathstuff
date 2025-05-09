@@ -199,13 +199,11 @@ function App() {
                     Basic usage:
                   </p>
                   <CodeBlock
-                    code={`// Create an instance
-val math = Math()
+                    code={`fun main(){
+    val side = rectArea(4f, 5f) // calculates rectangle area
 
-// Use the functions
-val area = math.triangleArea(3f, 4f, 5f)
-println(area) // 6.0
-`}
+    println(side) // 20.0
+}`}
                     language="kotlin"
                   />
                 </div>
