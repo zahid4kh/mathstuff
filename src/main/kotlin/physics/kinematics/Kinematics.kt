@@ -1,4 +1,4 @@
-package math.physics
+package math.physics.kinematics
 
 import kotlin.math.pow
 import kotlin.math.sqrt
