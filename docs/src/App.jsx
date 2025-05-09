@@ -168,7 +168,11 @@ function App() {
                   MathStuff Documentation
                 </h1>
                 <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8">
-                  A simple Kotlin library for common Math&Physics calculations
+                  A simple Kotlin library for common{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-cyan-500 font-medium">
+                    Math&Physics
+                  </span>{" "}
+                  calculations
                 </p>
                 <div className="text-left p-4 md:p-6 border border-border rounded-lg bg-card/50 shadow-sm">
                   <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">
