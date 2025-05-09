@@ -125,14 +125,6 @@ function App() {
                   </h2>
                   <CodeBlock code={selectedFunction.example} language="kotlin" />
                 </div>
-
-                <div className="mb-6 md:mb-8">
-                  <h2 className="text-base md:text-lg font-semibold mb-3 md:mb-4 flex items-center">
-                    <Code2 className="h-4 w-4 md:h-5 md:w-5 mr-2 text-muted-foreground" />
-                    Implementation
-                  </h2>
-                  <CodeBlock code={selectedFunction.code} language="kotlin" />
-                </div>
               </div>
             ) : (
               <div className="max-w-3xl mx-auto text-center">
