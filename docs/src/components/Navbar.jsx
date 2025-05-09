@@ -12,7 +12,7 @@ export default function Navbar() {
           </div>
           <div className="flex flex-col">
             <span className="text-base md:text-lg font-bold tracking-tight">MathStuff</span>
-            <span className="text-[10px] md:text-xs text-muted-foreground">1.0.7</span>
+            <span className="text-[10px] md:text-xs text-muted-foreground">1.0.8</span>
           </div>
         </div>
         <div className="flex items-center gap-3 md:gap-4">
