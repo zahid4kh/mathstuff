@@ -168,15 +168,51 @@ function App() {
                   MathStuff Documentation
                 </h1>
                 <p className="text-base md:text-xl text-muted-foreground mb-6 md:mb-8">
-                  A simple Kotlin library for common mathematical and geometric
-                  calculations
+                  A simple Kotlin library for common Math&Physics calculations
                 </p>
                 <div className="text-left p-4 md:p-6 border border-border rounded-lg bg-card/50 shadow-sm">
                   <h2 className="text-lg md:text-xl font-semibold mb-4 md:mb-6">
                     Getting Started
                   </h2>
+
+                  <h3 className="text-base md:text-lg font-semibold mb-3">
+                    Option 1: Using build.gradle.kts
+                  </h3>
                   <p className="mb-3 md:mb-4 text-sm md:text-base">
-                    Add the JitPack repository to your{" "}
+                    Your minimal module level{" "}
+                    <code className="text-xs md:text-sm bg-muted px-1.5 md:px-2 py-0.5 rounded font-mono">
+                      build.gradle.kts
+                    </code>{" "}
+                    should look like this:
+                  </p>
+                  <CodeBlock
+                    code={`plugins {
+    kotlin("jvm") version "2.1.20"
+}
+group = "kotlin"
+version = "1.0-SNAPSHOT"
+repositories {
+    maven { url = uri("https://jitpack.io") }
+    mavenCentral()
+}
+dependencies {
+    testImplementation(kotlin("test"))
+    implementation("com.github.zahid4kh:mathstuff:1.1.0")
+}
+tasks.test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(17)
+}`}
+                    language="kotlin"
+                  />
+
+                  <h3 className="text-base md:text-lg font-semibold mt-6 mb-3">
+                    Option 2: Using settings.gradle.kts
+                  </h3>
+                  <p className="mb-3 md:mb-4 text-sm md:text-base">
+                    1. Add the JitPack repository to your{" "}
                     <code className="text-xs md:text-sm bg-muted px-1.5 md:px-2 py-0.5 rounded font-mono">
                       settings.gradle.kts
                     </code>{" "}
@@ -188,16 +224,21 @@ function App() {
                   />
 
                   <p className="mt-4 md:mt-6 mb-3 md:mb-4 text-sm md:text-base">
-                    Add the dependency:
+                    2. Add the dependency to your{" "}
+                    <code className="text-xs md:text-sm bg-muted px-1.5 md:px-2 py-0.5 rounded font-mono">
+                      build.gradle.kts
+                    </code>{" "}
+                    file:
                   </p>
                   <CodeBlock
                     code={`implementation("com.github.zahid4kh:mathstuff:1.1.0")`}
                     language="kotlin"
                   />
 
-                  <p className="mt-4 md:mt-6 mb-3 md:mb-4 text-sm md:text-base">
-                    Basic usage:
-                  </p>
+                  <h2 className="text-base md:text-lg font-semibold mt-6 mb-3 flex items-center">
+                    <Calculator className="h-4 w-4 md:h-5 md:w-5 mr-2 text-muted-foreground" />
+                    Basic Usage
+                  </h2>
                   <CodeBlock
                     code={`fun main(){
     val side = rectArea(4f, 5f) // calculates rectangle area
@@ -207,6 +248,7 @@ function App() {
                     language="kotlin"
                   />
                 </div>
+
                 <p className="mt-6 md:mt-8 text-sm md:text-base text-muted-foreground flex items-center justify-center gap-2">
                   <ArrowRight className="h-3 w-3 md:h-4 md:w-4" />
                   <span className="md:hidden">Open menu to view functions</span>
