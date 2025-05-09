@@ -1,7 +1,9 @@
 package math.physics.kinematics
 
 import kotlin.math.pow
+import kotlin.math.sin
 import kotlin.math.sqrt
+import math.util.toRadians
 
 fun finalVelocity(
     initialVel: Double,
@@ -74,4 +76,31 @@ fun tangentialVelocity(
     omega: Float
 ): Float {
     return radius * omega
+}
+
+fun timeOfFlight(
+    initialVel: Float,
+    angleDegrees: Float,
+    g: Float = 9.81f
+): Float {
+    val angleRad = angleDegrees.toRadians()
+    return (2 * initialVel * sin(angleRad)) / g
+}
+
+fun maxHeight(
+    initialVel: Float,
+    angleDegrees: Float,
+    g: Float = 9.81f
+): Float {
+    val angleRad = angleDegrees.toRadians()
+    return ((initialVel.pow(2)) * sin(angleRad).pow(2)) / (2 * g)
+}
+
+fun range(
+    initialVel: Float,
+    angleDegrees: Float,
+    g: Float = 9.81f
+): Float {
+    val angleRad = angleDegrees.toRadians()
+    return ((initialVel.pow(2)) * sin(2 * angleRad)) / g
 }
