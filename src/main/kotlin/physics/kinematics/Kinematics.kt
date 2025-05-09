@@ -46,3 +46,32 @@ fun timeFromDisplacement(
     val t2 = (-initialVel - sqrt(discriminant)) / acceleration
     return listOf(t1, t2).first { it >= 0 }
 }
+
+
+fun centripetalAcceleration(
+    velocity: Float,
+    radius: Float
+): Float {
+    return (velocity.pow(2)) / radius
+}
+
+fun angularVelocity(
+    theta: Float,
+    time: Float
+): Float {
+    return theta / time
+}
+
+fun angularAcceleration(
+    omega: Float,
+    time: Float
+): Float {
+    return omega / time
+}
+
+fun tangentialVelocity(
+    radius: Float,
+    omega: Float
+): Float {
+    return radius * omega
+}

@@ -1,5 +1,7 @@
 package math.physics.dynamics
 
+import kotlin.math.pow
+
 fun force(
     mass: Double,
     acceleration: Double
@@ -41,4 +43,13 @@ fun changeInMomentum(
     finalVel: Double
 ): Double {
     return mass * (finalVel - initialVel)
+}
+
+
+fun centripetalForce(
+    mass: Float,
+    velocity: Float,
+    radius: Float
+): Float {
+    return (mass * velocity.pow(2)) / radius
 }
