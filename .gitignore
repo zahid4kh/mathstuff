@@ -18,6 +18,7 @@ out/
 .idea
 newstuff.md
 python.py
+/wiki
 
 ### Kotlin ###
 .kotlin
