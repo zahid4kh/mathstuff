@@ -33,6 +33,8 @@
     --ring: 0 0% 80%;
 
     --radius: 0.4rem;
+
+    --svg-stroke: 0 0% 10%;
   }
 
   .dark {
@@ -63,6 +65,8 @@
     --border: 0 0% 25%;
     --input: 0 0% 25%;
     --ring: 0 0% 70%;
+
+    --svg-stroke: 0 0% 98%;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -75,6 +79,10 @@
 
   h2 {
     @apply text-xl sm:text-2xl;
+  }
+  
+  svg {
+    stroke: hsl(var(--svg-stroke));
   }
 }
 
