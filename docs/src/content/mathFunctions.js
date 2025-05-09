@@ -405,6 +405,51 @@ export const mathFunctions = {
       returnType: "Float",
       example: "val perimeter = rectPerimeter(5f, 3f) // Returns 16f",
     },
+    {
+      name: "isGoldenRect",
+      description:
+        "Checks if a rectangle with the given side lengths is a golden rectangle.",
+      parameters: [
+        {
+          name: "sideA",
+          type: "Float",
+          description: "Side of the rectangle",
+        },
+        {
+          name: "sideB",
+          type: "Float",
+          description: "Side of the rectangle",
+        },
+        {
+          name: "tolerance",
+          type: "Double",
+          description: "Tolerance for the golden ratio check",
+        },
+      ],
+      returnType: "Boolean",
+      example: "val isGolden = isGoldenRect(2f, 3.23f) // Returns true",
+    },
+    {
+      name: "makeRectGolden",
+      description:
+        "Calculates the length of the other side required to make a rectangle golden, given one side and whether that side is intended to be the shorter or longer side of the resulting golden rectangle.",
+      parameters: [
+        {
+          name: "givenSide",
+          type: "Float",
+          description: "The length of the known side. Must be a positive value",
+        },
+        {
+          name: "isShorterSide",
+          type: "Boolean",
+          description:
+            "Boolean indicating if the given side is the shorter side",
+        },
+      ],
+      returnType: "Float",
+      example:
+        "val makeGolden = makeRectGolden(2f, isShorterSide = true) // Returns 3.236f",
+    },
   ],
   Utility: [
     {
