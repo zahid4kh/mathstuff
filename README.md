@@ -20,7 +20,7 @@ repositories {
 }
 dependencies {
     testImplementation(kotlin("test"))
-    implementation("com.github.zahid4kh:mathstuff:1.0.9")
+    implementation("com.github.zahid4kh:mathstuff:1.1.0")
 }
 tasks.test {
     useJUnitPlatform()
@@ -41,7 +41,7 @@ maven { url = uri("https://jitpack.io") }
 2. Add the dependency to your `build.gradle.kts` file
 
 ```kotlin
-implementation("com.github.zahid4kh:mathstuff:1.0.9")
+implementation("com.github.zahid4kh:mathstuff:1.1.0")
 ```
 
 ---
