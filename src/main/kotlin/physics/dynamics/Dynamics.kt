@@ -20,3 +20,25 @@ fun frictionalForce(
 ): Double {
     return mu * normalForce
 }
+
+fun momentum(
+    mass: Double,
+    velocity: Double
+): Double {
+    return mass * velocity
+}
+
+fun impulse(
+    force: Double,
+    time: Double
+): Double {
+    return force * time
+}
+
+fun changeInMomentum(
+    mass: Double,
+    initialVel: Double,
+    finalVel: Double
+): Double {
+    return mass * (finalVel - initialVel)
+}
