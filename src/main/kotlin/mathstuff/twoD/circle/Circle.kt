@@ -1,4 +1,4 @@
-package math.twoD.circle
+package mathstuff.twoD.circle
 
 import kotlin.math.PI
 import kotlin.math.pow

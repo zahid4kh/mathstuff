@@ -1,4 +1,4 @@
-package math.coordgeom
+package mathstuff.coordgeom
 
 import kotlin.math.abs
 import kotlin.math.pow

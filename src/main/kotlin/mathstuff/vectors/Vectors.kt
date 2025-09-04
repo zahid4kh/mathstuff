@@ -1,4 +1,4 @@
-package math.vectors
+package mathstuff.vectors
 
 import kotlin.math.acos
 import kotlin.math.sqrt
@@ -34,7 +34,7 @@ fun dotProduct(vec1: FloatArray, vec2: FloatArray): Float {
 }
 
 fun crossProduct(vec1: FloatArray, vec2: FloatArray): FloatArray {
-    if (vec1.size != 3 || vec2.size != 3) throw IllegalArgumentException("Cross product requires 3D vectors")
+    if (vec1.size != 3 || vec2.size != 3) throw IllegalArgumentException("Cross product requires 3D mathstuff.vectors")
 
     return floatArrayOf(
         vec1[1] * vec2[2] - vec1[2] * vec2[1],
