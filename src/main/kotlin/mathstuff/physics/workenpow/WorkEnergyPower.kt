@@ -1,6 +1,6 @@
-package physics.workenpow
+package mathstuff.physics.workenpow
 
-import util.toRadians
+import mathstuff.util.toRadians
 import kotlin.math.cos
 import kotlin.math.pow
 

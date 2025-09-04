@@ -1,7 +1,7 @@
 package math
 
-import twoD.rectangle.isGoldenRect
-import twoD.rectangle.makeRectGolden
+import mathstuff.twoD.rectangle.isGoldenRect
+import mathstuff.twoD.rectangle.makeRectGolden
 
 fun main(){
     println(isGoldenRect(2f, 3f)) // false

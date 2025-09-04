@@ -1,4 +1,4 @@
-package twoD.triangles
+package mathstuff.twoD.triangles
 
 import kotlin.math.PI
 import kotlin.math.acos

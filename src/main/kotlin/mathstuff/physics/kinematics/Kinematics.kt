@@ -1,9 +1,9 @@
-package physics.kinematics
+package mathstuff.physics.kinematics
 
 import kotlin.math.pow
 import kotlin.math.sin
 import kotlin.math.sqrt
-import util.toRadians
+import mathstuff.util.toRadians
 
 fun finalVelocity(
     initialVel: Double,
