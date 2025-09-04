@@ -1,4 +1,4 @@
-package math.twoD.square
+package twoD.square
 
 import kotlin.math.pow
 

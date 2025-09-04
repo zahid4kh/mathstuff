@@ -1,4 +1,4 @@
-package math.twoD.rectangle
+package twoD.rectangle
 
 import kotlin.math.abs
 import kotlin.math.sqrt

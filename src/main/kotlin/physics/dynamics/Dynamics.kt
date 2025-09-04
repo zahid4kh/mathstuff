@@ -1,4 +1,4 @@
-package math.physics.dynamics
+package physics.dynamics
 
 import kotlin.math.pow
 import kotlin.math.sqrt

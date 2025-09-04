@@ -1,4 +1,4 @@
-package math.vectors
+package vectors
 
 import kotlin.math.acos
 import kotlin.math.sqrt

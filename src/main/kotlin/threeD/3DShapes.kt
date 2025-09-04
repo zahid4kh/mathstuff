@@ -1,4 +1,4 @@
-package math.threeD
+package threeD
 
 import kotlin.math.PI
 import kotlin.math.pow

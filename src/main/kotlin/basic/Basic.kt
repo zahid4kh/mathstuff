@@ -1,4 +1,4 @@
-package math.basic
+package basic
 
 fun mean(numbers: List<Float>): Float {
     return if (numbers.isNotEmpty()) {

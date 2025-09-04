@@ -1,4 +1,4 @@
-package math.twoD
+package twoD
 
 import kotlin.math.PI
 import kotlin.math.pow

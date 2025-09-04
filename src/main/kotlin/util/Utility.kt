@@ -1,4 +1,4 @@
-package math.util
+package util
 
 import kotlin.math.PI
 
